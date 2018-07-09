@@ -1,0 +1,171 @@
+% !TeX spellcheck = hr_HR
+\documentclass[times, utf8, diplomski]{fer}
+\usepackage{booktabs}
+% razno
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{seqsplit}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[ddmmyyyy]{datetime}
+\usepackage{verbatim}
+\usepackage[croatian]{babel}
+
+%matlab - importanje
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+%counter reset - counteri za equatione figure itd.
+\usepackage{chngcntr}
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+\counterwithin*{figure}{section}
+\counterwithin*{figure}{subsection}
+
+%pretty formating - formatiranje raznih 
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\theequation}{\arabic{section}-\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}-\arabic{figure}}
+
+%centering figure captions - workaround!
+{\makeatletter\long\gdef\@gobble#1{}}
+\usepackage[justification=centering]{caption}
+
+%calligraphy packages
+\usepackage{calrsfs}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+\newcommand{\Ca}{\pazocal{C}}
+\newcommand{\Oa}{\pazocal{O}}
+\newcommand{\Va}{\pazocal{V}}
+\newcommand{\Ua}{\pazocal{U}}
+\newcommand{\Aa}{\pazocal{A}}
+
+
+\usepackage{amsmath}
+
+\begin{document}
+	% za importanje matlab kodova
+	\lstset{language=Matlab,%
+		%basicstyle=\color{red},
+		breaklines=true,%
+		morekeywords={matlab2tikz},
+		keywordstyle=\color{blue},%
+		morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+		identifierstyle=\color{black},%
+		stringstyle=\color{mylilas},
+		commentstyle=\color{mygreen},%
+		showstringspaces=false,%without this there will be a symbol in the places where there is a space
+		%		numbers=left,%
+		%		numberstyle={\tiny \color{black}},% size of the numbers
+		%		numbersep=9pt, % this defines how far the numbers are from the text
+		emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+		%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+	}
+	
+% TODO: Navedite broj rada.
+\thesisnumber{1731}
+
+% TODO: Navedite naslov rada.
+\title{Geometrijsko upravljanje multirotorskom letjelicom s benzinskim motorima}
+
+% TODO: Navedite vaše ime i prezime.
+\author{Lovro Marković}
+
+\maketitle
+
+% Ispis stranice s napomenom o umetanju izvornika rada. Uklonite naredbu \izvornik ako želite izbaciti tu stranicu.
+\izvornik
+
+% Dodavanje zahvale ili prazne stranice. Ako ne želite dodati zahvalu, naredbu ostavite radi prazne stranice.
+\zahvala{}
+
+\tableofcontents
+
+\chapter{Uvod}
+
+\paragraph{}
+Cilj ovoga rada je razviti i implementirati nelinearno geometrijsko upravljanje za multirotorsku letjelicu s benzinskim motorima. U radu će najprije biti postavljeni temelji za razumijevanje geometrijskog načina upravljanjima sustavima. Zatim će biti predstavljen sustav multirotorske letjelice te način implementacije nelinearnog geometrijskog upravljanja za takav konkretan sustav. Naposlijetku bit će prikazani i komentirani dobiveni rezultati u Gazebo simulatoru. \\
+
+\paragraph{}
+TODO
+
+\newpage 
+\clearpage
+
+\chapter{Diferencijalna geometrija}
+
+\section{Uvod}
+	\paragraph{} Upravljanje mehaničkim sustavima u nastavku ćemo provoditi geometrijskih metodama, odnosno metodama diferencijalne geometrije. Osnovni konstrukcija u diferencijalnoj geometriji je manifold. Ugrubo to je skup koji lokalno izgleda kao otvoreni podskup Euklidskog prostora. Na taj način manifold se može preciznije analizirati koristeći poznate konstrukcije iz analize Euklidskih prostora. \\ 
+	Jedna bitna razlika između manifolda i Euklidskih prostora jest koordinatna invarijantnost. Postoji više načina pomoću kojih u manifoldu možemo naći lokalnu sličnost sa Euklidskim prostorom, ali je ključno da su te metode neovisne o proizvoljnim izborima kao što su pristranost određenim koordinatnim sustavim i slično. To ne znači da se ne potiče korištenje koordinatnih sustava već da same metode i koncepti koji su korišteni budu koordinatno invarijantni, ali prikazani u željenim koordinatama. \\
+	U nastaku bit će definirana lokalna sličnost manifolda Euklidskom prostoru.
+
+\section{Topološki prostor}
+	
+	\paragraph{}Topološki prostor je par $(S, \Oa)$ gdje je $S$ skup i $\Oa\subset2^S$ je kolekcija podskupova, tj. otvoreni skup koji zadovoljava:
+	\begin{enumerate}
+		\item $\emptyset \in \Oa$ i $S \in \Oa$ 
+		\item Ako je A proizvoljni skup cijelih brojeva i $\{ \Oa_{a} \}_{a\in A}\subset \Oa$ je proizvoljna kolekcija otvorenih skupova tada vrijedi $\cup_{a\in A}\Oa_a\in \Oa$
+		\item Ako $\Oa_1, \Oa_2 \in \Oa$ tada $\Oa_1 \cap \Oa_2 \in \Oa$
+	\end{enumerate}
+
+\section{Mape}
+
+	\paragraph{}Neka su $(S, \Oa_s)$ i $(T, \Oa_t)$ topološki prostori i neka je $f:S \rightarrow T$ mapa, tada vrijed:i
+	\begin{enumerate}
+		\item Mapa je kontinuirana u $x_0$ za $x_0 \in S$ ako za svako susjedstvo $\Va$ od $f(x_0)$ postoji susjedstvo $\Ua$ of $x_0$ za koje vrijedi $f(\Ua)\subset\Va$ 
+		\item Ako je mapa f kontinuirana $\forall x \in S$ tada je mapa kontinuirana.
+		\item Ako je f bijekcija, kontinuirana i ima inverz koji je također kontinuiran tada je homeomorfizam.
+`	\end{enumerate}
+	
+\section{Diferencijalne mape višeg reda}
+
+	\paragraph{} Neka je $\Ua$ otvoreni podskup $\mathbb{R}^n$ i neka je mapa $f: \Ua \rightarrow \mathbb{R}^m$ tada:
+	\begin{enumerate}
+		\item Ako postoji r-ta kontinuirana derivacija mape f tada je f r puta diferencijabilna tj. klase $\boldsymbol{C}^r$ (kontinuirane mape su klase $\boldsymbol{C}^0$) .
+		\item Ako je f klase $\boldsymbol{C}^r$ $\forall r \in \mathbb{N}$ tada je beskonačno diferencijabilna ili klase $\boldsymbol{C}^\infty$. Također se kaže da je gladak ako je klase $\boldsymbol{C}^\infty$.
+		\item Bijekcija otvorenih skupova $f:\Ua \subset \mathbb{R}^n \rightarrow \Va \subset \mathbb{R}^m$ klase $\boldsymbol{C}^r$ i za koju vrijedi da je inverz od f isto klase $\boldsymbol{C}^r$ je $\boldsymbol{C}^r$ - difeomorfizam.
+	\end{enumerate}
+	
+\section{Karte, atlasi i diferencijalne strukture}
+	\paragraph{} Neka je $S$ skup. Karta od $S$ je par $(\Ua, \phi)$ sa svojstvima:
+	\begin{enumerate}
+		\item $\Ua$ je podskup od $S$
+		\item $\phi: \Ua \rightarrow \mathbb{R}^n$ je injekcija pri kojoj je $\phi(\Ua)$ otvoreni podskup od $\mathbb{R}^n$
+		
+		$\boldsymbol{C}^r$ - atlas od $S$ je skup $\Aa = \{ (\Ua_a, \phi_a) \}_{a\in A}$ karata sa svojstvom da je $S = \cup_{a\in A}\Ua_a$ te kadgod $\Ua_a \cap \Ua_b \neq \emptyset$ dalje vrijedi:
+		
+		\item $\phi_a(\Ua_a \cap \Ua_b)$ i $\phi_b(\Ua_a\cap \Ua_b)$ su otvoreni podskupovi od $\mathbb{R}^n$
+		\item Tranzijentna mapa $\phi_{ab} \triangleq \phi_b \circ \phi_a^{-1}$ je $\boldsymbol{C}^r$ - difeomorfizam od $\phi_a(\Ua_a \cap \Ua_b)$ prema $\phi_b(\Ua_a\cap \Ua_b)$.
+	\end{enumerate}
+	
+	Dva $\boldsymbol{C}^r$ - atlasa su $\Aa_1$ i $\Aa_2$ su ekvivalentna ako $\Aa_1 \cup \Aa_2$ je isto $\boldsymbol{C}^r$ - atlas. $\boldsymbol{C}^r$ - diferencijabilna struktura na skupu S je klasa ekvivalencija atlasa sa prethodnom relacijom. $\boldsymbol{C}^r$ - diferencijalni manifold ili samo $\boldsymbol{C}^r$ - manifold M je skup S sa takvom $\boldsymbol{C}^r$ - diferencijalnom strukturom.
+\chapter{Zaključak}
+Zaključak.
+
+\bibliography{literatura}
+\bibliographystyle{fer}
+
+\begin{sazetak}
+Ravijen je nelinearni geometrijski regulator za upravljanje multirotorskom letjelicom s benzinskim motorima. Regulator je implementiran u programskom jeziku C++ u ROS okruženju te ispitan korištenjem simulacijskog okruženja Gazebo na postojećem modelu multirotorske bespilotne letjelice s benzinskim motorima i pokretnim masama.
+
+\kljucnerijeci{geometrijsko upravljanje, multirotorska letjelica, Lijeve grupe, SE(3), ROS, Gazebo}
+\end{sazetak}
+
+% TODO: Navedite naslov na engleskom jeziku.
+\engtitle{Title}
+\begin{abstract}
+A nonlinear geometric controller is implemented using C++ programming language within ROS environment. The controller is used on a multirotor unmanned aerial vehicle with internal combustion engines. Results are obtained from Gazebo simulation environment using the existing multirotor UAV model with internal combustion engines and moving masses.
+
+\keywords{geometric control, multirotor UAV, Lie groups, SE(3), ROS, Gazebo}
+\end{abstract}
+
+\end{document}
