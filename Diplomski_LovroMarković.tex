@@ -1,4 +1,4 @@
-% !TeX spellcheck = hr_HR
+\label{key}% !TeX spellcheck = hr_HR
 \documentclass[times, utf8, diplomski]{fer}
 \usepackage{booktabs}
 % razno
@@ -15,6 +15,7 @@
 \usepackage[ddmmyyyy]{datetime}
 \usepackage{verbatim}
 \usepackage[croatian]{babel}
+\usepackage{todonotes}
 
 %matlab - importanje
 \usepackage{listings}
@@ -110,29 +111,33 @@ TODO
 
 \section{Topološki prostor}
 	
-	\paragraph{}Topološki prostor je par $(S, \Oa)$ gdje je $S$ skup i $\Oa\subset2^S$ je kolekcija podskupova, tj. otvoreni skup koji zadovoljava:
+	\paragraph{}Neka je $S$ skup elemenata i $2^S$ je skup svih podskupova od $S$. Topološki prostor je par $(S, \Oa)$ gdje je $\Oa\subset2^S$ je kolekcija podskupova, tj. otvoreni skup koji zadovoljava:
 	\begin{enumerate}
 		\item $\emptyset \in \Oa$ i $S \in \Oa$ 
-		\item Ako je A proizvoljni skup cijelih brojeva i $\{ \Oa_{a} \}_{a\in A}\subset \Oa$ je proizvoljna kolekcija otvorenih skupova tada vrijedi $\cup_{a\in A}\Oa_a\in \Oa$
+		\item Ako je A proizvoljni skup cijelih brojeva i vrijedi da je $\{ \Oa_{a} \}_{a\in A}\subset \Oa$ proizvoljna kolekcija otvorenih skupova tada vrijedi $\bigcup_{a\in A}\Oa_a\in \Oa$
 		\item Ako $\Oa_1, \Oa_2 \in \Oa$ tada $\Oa_1 \cap \Oa_2 \in \Oa$
 	\end{enumerate}
+	\paragraph{}Dakle ako kažemo da je S topološki prostor te vrijede prethodni uvjeti tada se prtpostavlja neka topologija $\Oa$ nad prostorom $S$.
+
+\newpage
+\clearpage
 
 \section{Mape}
 
-	\paragraph{}Neka su $(S, \Oa_s)$ i $(T, \Oa_t)$ topološki prostori i neka je $f:S \rightarrow T$ mapa, tada vrijed:i
+	\paragraph{}Neka su $(S, \Oa_s)$ i $(T, \Oa_t)$ topološki prostori i neka je $f:S \rightarrow T$ mapa, tada vrijedi:
 	\begin{enumerate}
 		\item Mapa je kontinuirana u $x_0$ za $x_0 \in S$ ako za svako susjedstvo $\Va$ od $f(x_0)$ postoji susjedstvo $\Ua$ of $x_0$ za koje vrijedi $f(\Ua)\subset\Va$ 
-		\item Ako je mapa f kontinuirana $\forall x \in S$ tada je mapa kontinuirana.
-		\item Ako je f bijekcija, kontinuirana i ima inverz koji je također kontinuiran tada je homeomorfizam.
+		\item Ako je mapa f kontinuirana za $\forall x \in S$ tada je mapa kontinuirana.
+		\item Ako je f bijekcija, kontinuirana i ima inverz koji je također kontinuiran tada je mapa f homeomorfizam.
 `	\end{enumerate}
 	
 \section{Diferencijalne mape višeg reda}
 
 	\paragraph{} Neka je $\Ua$ otvoreni podskup $\mathbb{R}^n$ i neka je mapa $f: \Ua \rightarrow \mathbb{R}^m$ tada:
 	\begin{enumerate}
-		\item Ako postoji r-ta kontinuirana derivacija mape f tada je f r puta diferencijabilna tj. klase $\boldsymbol{C}^r$ (kontinuirane mape su klase $\boldsymbol{C}^0$) .
-		\item Ako je f klase $\boldsymbol{C}^r$ $\forall r \in \mathbb{N}$ tada je beskonačno diferencijabilna ili klase $\boldsymbol{C}^\infty$. Također se kaže da je gladak ako je klase $\boldsymbol{C}^\infty$.
-		\item Bijekcija otvorenih skupova $f:\Ua \subset \mathbb{R}^n \rightarrow \Va \subset \mathbb{R}^m$ klase $\boldsymbol{C}^r$ i za koju vrijedi da je inverz od f isto klase $\boldsymbol{C}^r$ je $\boldsymbol{C}^r$ - difeomorfizam.
+		\item Ako postoji r-ta kontinuirana derivacija mape f tada je f r-puta diferencijabilna tj. klase $\boldsymbol{C}^r$ (kontinuirane mape su klase $\boldsymbol{C}^0$) .
+		\item Ako je f klase $\boldsymbol{C}^r$ $\forall r \in \mathbb{N}$ tada je beskonačno diferencijabilna ili klase $\boldsymbol{C}^\infty$. Također se može reći da je mapa f glatka ako je klase $\boldsymbol{C}^\infty$.
+		\item Mapa f je $\boldsymbol{C}^r$-difeomorfizam ako vrijedi da je bijekcija otvorenih skupova $f:\Ua \subset \mathbb{R}^n \rightarrow \Va \subset \mathbb{R}^m$, ako je klase $\boldsymbol{C}^r$ te ako je inverz mape f isto klase $\boldsymbol{C}^r$.
 	\end{enumerate}
 	
 \section{Karte, atlasi i diferencijalne strukture}
@@ -141,13 +146,54 @@ TODO
 		\item $\Ua$ je podskup od $S$
 		\item $\phi: \Ua \rightarrow \mathbb{R}^n$ je injekcija pri kojoj je $\phi(\Ua)$ otvoreni podskup od $\mathbb{R}^n$
 		
-		$\boldsymbol{C}^r$ - atlas od $S$ je skup $\Aa = \{ (\Ua_a, \phi_a) \}_{a\in A}$ karata sa svojstvom da je $S = \cup_{a\in A}\Ua_a$ te kadgod $\Ua_a \cap \Ua_b \neq \emptyset$ dalje vrijedi:
+		$\boldsymbol{C}^r$ - atlas od $S$ je skup $\Aa = \{ (\Ua_a, \phi_a) \}_{a\in A}$ karata sa svojstvom da je $S = \cup_{a\in A}\Ua_a$ te kadgod je zadovoljeno $\Ua_a \cap \Ua_b \neq \emptyset$ tada dalje vrijedi:
 		
 		\item $\phi_a(\Ua_a \cap \Ua_b)$ i $\phi_b(\Ua_a\cap \Ua_b)$ su otvoreni podskupovi od $\mathbb{R}^n$
 		\item Tranzijentna mapa $\phi_{ab} \triangleq \phi_b \circ \phi_a^{-1}$ je $\boldsymbol{C}^r$ - difeomorfizam od $\phi_a(\Ua_a \cap \Ua_b)$ prema $\phi_b(\Ua_a\cap \Ua_b)$.
 	\end{enumerate}
 	
-	Dva $\boldsymbol{C}^r$ - atlasa su $\Aa_1$ i $\Aa_2$ su ekvivalentna ako $\Aa_1 \cup \Aa_2$ je isto $\boldsymbol{C}^r$ - atlas. $\boldsymbol{C}^r$ - diferencijabilna struktura na skupu S je klasa ekvivalencija atlasa sa prethodnom relacijom. $\boldsymbol{C}^r$ - diferencijalni manifold ili samo $\boldsymbol{C}^r$ - manifold M je skup S sa takvom $\boldsymbol{C}^r$ - diferencijalnom strukturom.
+	Ekvivalenciju među više atlasa možemo uspostaviti na slijedeći način. Neka su dana dva $\boldsymbol{C}^r$-atlasa $\Aa_1$ i $\Aa_2$. Oni će biti ekvivalentni ako je vrijedi da $\Aa_1 \cup \Aa_2$ je isto $\boldsymbol{C}^r$-atlas. Nadalje se može definirati $\boldsymbol{C}^r$-diferencijabilna struktura na skupu S kao klasa ekvivalencija atlasa sa prethodno definiranom relacijom ekvivalencije dvaju atlasa. \\
+	Naposlijetku definiramo $\boldsymbol{C}^r$-diferencijalni manifold ili samo $\boldsymbol{C}^r$-manifold M kao skup S sa prethodno definiranom $\boldsymbol{C}^r$-diferencijalnom strukturom. Dakle manifold je skup S sa kolekcijom atlasa koji sadrže mape $\phi$ pojedinih područja $\Ua$ skupa S prema $\mathbb{R}^n$.
+	
+\newpage
+\clearpage
+	
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth]{fig_overlap_charts.png}
+		\caption{Grafički prikaz manifolda M te transportnih funkcija $\varphi$ i $\psi$ od manifolda $M$ prema $\mathbb{R}^2$ te prikaz kompozicije transportnih mapa kao vezu između slika preklopnih dijelova $\Ua$ i $\Va$ u Euklidskom prostoru.}
+	\end{figure}
+\chapter{Lijeve grupe i Lijeva algebra}
+
+\section{Uvod}
+
+	\paragraph{}Lijeva teorija je od velike važnosti i u fizici i u diferencijalnoj geometriji. U ovom dijelu bit će predstavljen koncept Lijeve grupe te pripadajuće Lijeve algebre. Fokus će biti usmjeren prema Specijalnim Euklidskim grupama SE(3) budući da su one predmet zanimljive u kontekstu ovog rada.
+	
+\section{Lijeve grupe}
+
+	\paragraph{} Lijeva grupa je grupa $(G, \bullet)$ gdje je G glatki manifold klase $\boldsymbol{C}^\infty$, a $\bullet$ pripadajući operator nad G. Svojstva operatora $\bullet$ su slijedeća: 
+	\begin{enumerate}
+		\item Asocijativnost: $\forall a, b, c \in G :  a\bullet(b\bullet c) = (a\bullet b) \bullet c$
+		\item Neutralni element: $\exists e \in G : \forall g \in G : g \bullet e = e \bullet g = g$
+		\item Inverz: $\forall g \in G : \exists g^{-1} \in G : g \bullet g^{-1} = g^{-1} \bullet g = e$
+	\end{enumerate}
+	Ako vrijedi i svojstvo komutativnosti: $a \bullet b = b \bullet a, \forall a, b \in G$ tada je grupa abelijanska. Dana je toplogija nad G preko slijedećih mapa:
+	
+	\begin{gather}
+		\mu: G \times G \rightarrow G \\
+		(g_1, g_2) \mapsto g_1 \bullet g_2
+	\end{gather}
+	
+	i: 
+	\begin{gather}
+		i: G \rightarrow G \\
+		g \mapsto g^{-1}		
+	\end{gather}
+	
+	Mape $g$ i $i$ su glatke mape. \\
+	\todo[inline]{Nastaviti iz knjige, navesti primjere do SE(3) i onda algebre}
+	\newpage
+	\clearpage
+	
 \chapter{Zaključak}
 Zaključak.
 

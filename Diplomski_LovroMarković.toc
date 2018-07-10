@@ -7,10 +7,16 @@
 \contentsline {paragraph}{}{2}
 \contentsline {section}{\numberline {2.2}Topolo\IeC {\v s}ki prostor}{2}
 \contentsline {paragraph}{}{2}
-\contentsline {section}{\numberline {2.3}Mape}{2}
 \contentsline {paragraph}{}{2}
+\contentsline {section}{\numberline {2.3}Mape}{3}
+\contentsline {paragraph}{}{3}
 \contentsline {section}{\numberline {2.4}Diferencijalne mape vi\IeC {\v s}eg reda}{3}
 \contentsline {paragraph}{}{3}
 \contentsline {section}{\numberline {2.5}Karte, atlasi i diferencijalne strukture}{3}
 \contentsline {paragraph}{}{3}
-\contentsline {chapter}{\numberline {3}Zaklju\IeC {\v c}ak}{4}
+\contentsline {chapter}{\numberline {3}Lijeve grupe i Lijeva algebra}{5}
+\contentsline {section}{\numberline {3.1}Uvod}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {section}{\numberline {3.2}Lijeve grupe}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {chapter}{\numberline {4}Zaklju\IeC {\v c}ak}{6}
