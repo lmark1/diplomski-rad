@@ -19,4 +19,9 @@
 \contentsline {paragraph}{}{5}
 \contentsline {section}{\numberline {3.2}Lijeve grupe}{5}
 \contentsline {paragraph}{}{5}
-\contentsline {chapter}{\numberline {4}Zaklju\IeC {\v c}ak}{6}
+\contentsline {section}{\numberline {3.3}Lijeva grupa SE(3)}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{N-dimenzijska translacijska grupa:}{6}
+\contentsline {paragraph}{Op\IeC {\'c}a linearna grupa (\textit {"General linear group"}):}{6}
+\contentsline {paragraph}{title}{6}
+\contentsline {chapter}{\numberline {4}Zaklju\IeC {\v c}ak}{7}

@@ -105,7 +105,7 @@ TODO
 \chapter{Diferencijalna geometrija}
 
 \section{Uvod}
-	\paragraph{} Upravljanje mehaničkim sustavima u nastavku ćemo provoditi geometrijskih metodama, odnosno metodama diferencijalne geometrije. Osnovni konstrukcija u diferencijalnoj geometriji je manifold. Ugrubo to je skup koji lokalno izgleda kao otvoreni podskup Euklidskog prostora. Na taj način manifold se može preciznije analizirati koristeći poznate konstrukcije iz analize Euklidskih prostora. \\ 
+	\paragraph{} Upravljanje mehaničkim sustavima u nastavku ćemo provoditi geometrijskih metodama, odnosno metodama diferencijalne geometrije. Osnovna konstrukcija u diferencijalnoj geometriji je manifold. Ugrubo to je skup koji lokalno izgleda kao otvoreni podskup Euklidskog prostora. Na taj način manifold se može preciznije analizirati koristeći poznate konstrukcije iz analize Euklidskih prostora. \\ 
 	Jedna bitna razlika između manifolda i Euklidskih prostora jest koordinatna invarijantnost. Postoji više načina pomoću kojih u manifoldu možemo naći lokalnu sličnost sa Euklidskim prostorom, ali je ključno da su te metode neovisne o proizvoljnim izborima kao što su pristranost određenim koordinatnim sustavim i slično. To ne znači da se ne potiče korištenje koordinatnih sustava već da same metode i koncepti koji su korišteni budu koordinatno invarijantni, ali prikazani u željenim koordinatama. \\
 	U nastaku bit će definirana lokalna sličnost manifolda Euklidskom prostoru.
 
@@ -117,7 +117,7 @@ TODO
 		\item Ako je A proizvoljni skup cijelih brojeva i vrijedi da je $\{ \Oa_{a} \}_{a\in A}\subset \Oa$ proizvoljna kolekcija otvorenih skupova tada vrijedi $\bigcup_{a\in A}\Oa_a\in \Oa$
 		\item Ako $\Oa_1, \Oa_2 \in \Oa$ tada $\Oa_1 \cap \Oa_2 \in \Oa$
 	\end{enumerate}
-	\paragraph{}Dakle ako kažemo da je S topološki prostor te vrijede prethodni uvjeti tada se prtpostavlja neka topologija $\Oa$ nad prostorom $S$.
+	\paragraph{}Dakle, ako kažemo da je S topološki prostor, te vrijede prethodni uvjeti tada se pretpostavlja neka topologija $\Oa$ nad prostorom $S$.
 
 \newpage
 \clearpage
@@ -162,6 +162,9 @@ TODO
 		\includegraphics[width=\textwidth]{fig_overlap_charts.png}
 		\caption{Grafički prikaz manifolda M te transportnih funkcija $\varphi$ i $\psi$ od manifolda $M$ prema $\mathbb{R}^2$ te prikaz kompozicije transportnih mapa kao vezu između slika preklopnih dijelova $\Ua$ i $\Va$ u Euklidskom prostoru.}
 	\end{figure}
+	
+	\todo[inline]{Dodati o tangencijalnim manifoldima i slike, definirati glatki manifold}
+	
 \chapter{Lijeve grupe i Lijeva algebra}
 
 \section{Uvod}
@@ -180,19 +183,31 @@ TODO
 	
 	\begin{gather}
 		\mu: G \times G \rightarrow G \\
-		(g_1, g_2) \mapsto g_1 \bullet g_2
+		(g_1, g_2) \mapsto g_1 \bullet g_2 \\ g_1, g_2 \in G
 	\end{gather}
 	
 	i: 
 	\begin{gather}
 		i: G \rightarrow G \\
-		g \mapsto g^{-1}		
+		g \mapsto g^{-1} \\
+		g \in G
 	\end{gather}
 	
-	Mape $g$ i $i$ su glatke mape. \\
-	\todo[inline]{Nastaviti iz knjige, navesti primjere do SE(3) i onda algebre}
+	Mape $g$ i $i$ su glatke mape. Dakle Lijeve grupe su topološke grupe, čiji se elementi unutar toploškim prostorom, odnosno dio manifolda, a operacija nad grupom $\bullet$ je kontinuirana, kao i njen inverz.
+
 	\newpage
 	\clearpage
+	
+\section{Lijeva grupa SE(3)}
+
+	\paragraph{}U ovom dijelu bit će definirano nekoliko različitih Lijevih grupa s konačnim ciljem definiranja specijalne ortogonalne grupe SO(3) te njenog proširenja na specijalnu Euklidsku grupu SE(3). 	
+	
+	\paragraph{N-dimenzijska translacijska grupa:} Ako promatramo skup $\mathbb{R}^n$ kao glatki manifold tada možemo definirati Lijevu grupu $(\mathbb{R}^n, +_{\mathbb{R}^n})$ sa operatorom zbrajanja u n-dimenzionalnom prostoru. Takva grupa se zove n-dimenzijska translacijska grupa.
+	
+	\paragraph{Opća linearna grupa (\textit{"General linear group"}):} Neka je skup G sačinjen od matrica $\varphi$ tako da vrijedi $G = \{ \varphi: \mathbb{R}^n \rightarrow \mathbb{R}^n | det \varphi \neq 0 \}:=GL(n, \mathbb{R}^n)$. Ako bi tome skupu pridodali operator kompozicije $\circ$ tada možemo definirati Lijevu grupu $(GL(n, \mathbb{R}^n), \circ)$. To je dakle grupa svih invertibilnih matrica koje svoje karakteristike glatkog manifolda naslijeđuju činjenicom da su takve matrice otvoreni podskup grupe svih nxn matrica $\mathbb{R}^{n^2}$ koje čine glatki manifold.
+	\todo[inline]{Reci da je Rn2 stvarno glatki manifold (u appendixu?)}
+	
+	\paragraph{title}
 	
 \chapter{Zaključak}
 Zaključak.
