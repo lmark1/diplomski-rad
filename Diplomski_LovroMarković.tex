@@ -202,12 +202,21 @@ TODO
 
 	\paragraph{}U ovom dijelu bit će definirano nekoliko različitih Lijevih grupa s konačnim ciljem definiranja specijalne ortogonalne grupe SO(3) te njenog proširenja na specijalnu Euklidsku grupu SE(3). 	
 	
-	\paragraph{N-dimenzijska translacijska grupa:} Ako promatramo skup $\mathbb{R}^n$ kao glatki manifold tada možemo definirati Lijevu grupu $(\mathbb{R}^n, +_{\mathbb{R}^n})$ sa operatorom zbrajanja u n-dimenzionalnom prostoru. Takva grupa se zove n-dimenzijska translacijska grupa.
+	\paragraph{N-dimenzijska translacijska grupa:} Mapa $\varphi$ je kruta mapa ako vrijedi 
+	$\forall v, w \in \mathbb{R}^n, \, d(\varphi(v), \, \varphi(w)) = d(v, w)$. Drugim riječima mapa je kruta ako su nakon mapiranja duljine očuvane. \\
+	Neka je skup $G$ sačinjena od svih krutih mapa tako da vrijedi $G = \{ \varphi: \mathbb{R}^n \rightarrow \mathbb{R}^n \, | \, \varphi\, je\, kruta\, mapa\} := T(n)$. Ako se skupu $T(n)$ pridruži operator kompozicije tada se dobiva translacijska Lijeva grupa $(T(n), \circ)$.
 	
-	\paragraph{Opća linearna grupa (\textit{"General linear group"}):} Neka je skup G sačinjen od matrica $\varphi$ tako da vrijedi $G = \{ \varphi: \mathbb{R}^n \rightarrow \mathbb{R}^n | det \varphi \neq 0 \}:=GL(n, \mathbb{R}^n)$. Ako bi tome skupu pridodali operator kompozicije $\circ$ tada možemo definirati Lijevu grupu $(GL(n, \mathbb{R}^n), \circ)$. To je dakle grupa svih invertibilnih matrica koje svoje karakteristike glatkog manifolda naslijeđuju činjenicom da su takve matrice otvoreni podskup grupe svih nxn matrica $\mathbb{R}^{n^2}$ koje čine glatki manifold.
+	\paragraph{Opća linearna grupa (\textit{"General linear group"}):} Neka je skup G sačinjen od matrica, tj. mapa $\varphi$ tako da vrijedi $G = \{ \varphi: \mathbb{R}^n \rightarrow \mathbb{R}^n \,|\, det \, \varphi \neq 0 \}:=GL(n, \mathbb{R}^n)$. Ako bi tome skupu pridodali operator kompozicije $\circ$ tada možemo definirati Lijevu grupu $(GL(n, \mathbb{R}^n), \circ)$. To je dakle grupa svih invertibilnih matrica koje svoje karakteristike glatkog manifolda naslijeđuju činjenicom da su takve matrice otvoreni podskup grupe svih nxn matrica $\mathbb{R}^{n^2}$ koje čine glatki manifold.
 	\todo[inline]{Reci da je Rn2 stvarno glatki manifold (u appendixu?)}
 	
-	\paragraph{title}
+	\paragraph{(Specijalna) Ortogonalna grupa:} Neka je skup G sačinjen od matrica $Q$ tako da vrijedi \\ 
+	$G = \{ Q \in GL(n, \mathbb{R}^n) \,|\, det \, Q = \pm 1\} := O(n)$. Budući da su matrice elementi skupa $GL(n, \mathbb{R}^n)$ njima se može pridodijeliti i naslijeđeni operator $\circ$. Takva Lijeva grupa $(O(n),\circ)$ zove se ortogonalna grupa. \\
+	Specijalna ortogonalna grupa $SO(3)$ je podgrupa ortogonalnoj grupi, uz uvjet da matrice moraju imati determinante jednake 1. Ta grupe se ujedno naziva i rotacijska grupa jer sadrži sve rotacijske matrice. \\
+	Obje grupe lančano naslijeđuju karakteristike glatkog manifolda od opće linearne grupe.
+	
+	\paragraph{(Specijalna) Euklidska grupa:} Euklidska grupa kao podgrupe sadrži translacijsku Lijevu grupu $T(n)$ i ortogonalnu grupu $O(n)$. Svaki element u $E(n)$ sastoji se od translacije koju slijedi ortogonalna transformacija. \\
+	Specijalna Euklidska grupa kao poskup umjesto ortogonalne grupe sadrži specijalnu ortogonalnu grupu.
+	
 	
 \chapter{Zaključak}
 Zaključak.
