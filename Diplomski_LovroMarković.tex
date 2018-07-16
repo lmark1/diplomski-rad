@@ -1,4 +1,4 @@
-\label{key}% !TeX spellcheck = hr_HR
+% !TeX spellcheck = hr_HR
 \documentclass[times, utf8, diplomski]{fer}
 \usepackage{booktabs}
 % razno
@@ -111,10 +111,12 @@ TODO
 
 \section{Topološki prostor}
 	
-	\paragraph{}Neka je $S$ skup elemenata i $2^S$ je skup svih podskupova od $S$. Topološki prostor je par $(S, \Oa)$ gdje je $\Oa\subset2^S$ je kolekcija podskupova, tj. otvoreni skup koji zadovoljava:
+	\paragraph{}Neka je $S$ skup elemenata i $2^S$ je skup svih podskupova od $S$. Topološki prostor je par $(S, \Oa)$ gdje je $\Oa\subset2^S$ kolekcija svih podskupova, tj. otvoreni skup koji zadovoljava:
 	\begin{enumerate}
 		\item $\emptyset \in \Oa$ i $S \in \Oa$ 
-		\item Ako je A proizvoljni skup cijelih brojeva i vrijedi da je $\{ \Oa_{a} \}_{a\in A}\subset \Oa$ proizvoljna kolekcija otvorenih skupova tada vrijedi $\bigcup_{a\in A}\Oa_a\in \Oa$
+		
+		\item Ako je A proizvoljni skup cijelih brojeva i vrijedi da je $\{ \Oa_{a} \}_{a\in A}\subset \Oa$ proizvoljna kolekcija otvorenih skupova tada vrijedi $\bigcup_{a\in A}\Oa_a\in \Oa$, drugim riječima vrijedi da je $\Oa$ prebrojiv.
+		
 		\item Ako $\Oa_1, \Oa_2 \in \Oa$ tada $\Oa_1 \cap \Oa_2 \in \Oa$
 	\end{enumerate}
 	\paragraph{}Dakle, ako kažemo da je S topološki prostor, te vrijede prethodni uvjeti tada se pretpostavlja neka topologija $\Oa$ nad prostorom $S$.
@@ -125,19 +127,29 @@ TODO
 \section{Mape}
 
 	\paragraph{}Neka su $(S, \Oa_s)$ i $(T, \Oa_t)$ topološki prostori i neka je $f:S \rightarrow T$ mapa, tada vrijedi:
+	
 	\begin{enumerate}
+		
 		\item Mapa je kontinuirana u $x_0$ za $x_0 \in S$ ako za svako susjedstvo $\Va$ od $f(x_0)$ postoji susjedstvo $\Ua$ of $x_0$ za koje vrijedi $f(\Ua)\subset\Va$ 
+		
 		\item Ako je mapa f kontinuirana za $\forall x \in S$ tada je mapa kontinuirana.
+		
 		\item Ako je f bijekcija, kontinuirana i ima inverz koji je također kontinuiran tada je mapa f homeomorfizam.
-`	\end{enumerate}
+`	
+	\end{enumerate}
+	
 	
 \section{Diferencijalne mape višeg reda}
 
 	\paragraph{} Neka je $\Ua$ otvoreni podskup $\mathbb{R}^n$ i neka je mapa $f: \Ua \rightarrow \mathbb{R}^m$ tada:
 	\begin{enumerate}
+		
 		\item Ako postoji r-ta kontinuirana derivacija mape f tada je f r-puta diferencijabilna tj. klase $\boldsymbol{C}^r$ (kontinuirane mape su klase $\boldsymbol{C}^0$) .
+		
 		\item Ako je f klase $\boldsymbol{C}^r$ $\forall r \in \mathbb{N}$ tada je beskonačno diferencijabilna ili klase $\boldsymbol{C}^\infty$. Također se može reći da je mapa f glatka ako je klase $\boldsymbol{C}^\infty$.
+		
 		\item Mapa f je $\boldsymbol{C}^r$-difeomorfizam ako vrijedi da je bijekcija otvorenih skupova $f:\Ua \subset \mathbb{R}^n \rightarrow \Va \subset \mathbb{R}^m$, ako je klase $\boldsymbol{C}^r$ te ako je inverz mape f isto klase $\boldsymbol{C}^r$.
+	
 	\end{enumerate}
 	
 \section{Karte, atlasi i diferencijalne strukture}
@@ -153,17 +165,35 @@ TODO
 	\end{enumerate}
 	
 	Ekvivalenciju među više atlasa možemo uspostaviti na slijedeći način. Neka su dana dva $\boldsymbol{C}^r$-atlasa $\Aa_1$ i $\Aa_2$. Oni će biti ekvivalentni ako je vrijedi da $\Aa_1 \cup \Aa_2$ je isto $\boldsymbol{C}^r$-atlas. Nadalje se može definirati $\boldsymbol{C}^r$-diferencijabilna struktura na skupu S kao klasa ekvivalencija atlasa sa prethodno definiranom relacijom ekvivalencije dvaju atlasa. \\
-	Naposlijetku definiramo $\boldsymbol{C}^r$-diferencijalni manifold ili samo $\boldsymbol{C}^r$-manifold M kao skup S sa prethodno definiranom $\boldsymbol{C}^r$-diferencijalnom strukturom. Dakle manifold je skup S sa kolekcijom atlasa koji sadrže mape $\phi$ pojedinih područja $\Ua$ skupa S prema $\mathbb{R}^n$.
-	
-\newpage
-\clearpage
+	Naposlijetku definiramo $\boldsymbol{C}^r$-diferencijalni manifold ili samo $\boldsymbol{C}^r$-manifold M kao skup S sa prethodno definiranom $\boldsymbol{C}^r$-diferencijalnom strukturom. Dakle manifold je skup S sa kolekcijom atlasa koji sadrže mape $\phi$ pojedinih područja $\Ua$ skupa S prema $\mathbb{R}^n$. \\
+	Na isti način može se definirati i glatki manifold, odnosno $\boldsymbol{C}^\infty$-manifold. Takav manifold sadrži glatku diferencijalnu strukturu što podrazumijeva glatke mape preslikavanja u Euklidski prostor. U nastavku razmatrat će se upravo takve vrste manifolda.
 	
 	\begin{figure}[h]
 		\includegraphics[width=\textwidth]{fig_overlap_charts.png}
 		\caption{Grafički prikaz manifolda M te transportnih funkcija $\varphi$ i $\psi$ od manifolda $M$ prema $\mathbb{R}^2$ te prikaz kompozicije transportnih mapa kao vezu između slika preklopnih dijelova $\Ua$ i $\Va$ u Euklidskom prostoru.}
 	\end{figure}
+
+\section{Tangencijalni prostor na manifoldu}
+
+	Neka je M manifold. Tada se može konstruirati vektorski prostor nad $\mathbb{R}$ na slijedeći način: $(\boldsymbol{C}^\infty(M), +, \cdot)$, gdje je $\boldsymbol{C}^\infty(M) = \{ f: M \rightarrow \mathbb{R} \ | f \,je\, glatka\}$. Dakle, definiran je vektorski prostor kao skup svih glatkih mapa $f$ sa pridruženim operatorima zbrajanja i množenja. 
 	
-	\todo[inline]{Dodati o tangencijalnim manifoldima i slike, definirati glatki manifold}
+	\paragraph{Krivulja na manifoldu:} Neka je definirana krivulja na manifoldu kao glatka mapa $\gamma:\mathbb{R} \rightarrow M$, gdje je $\mathbb{R}$ promatran kao 1-dimenzionalni manifold.
+	
+	\paragraph{Operator usmjerene derivacije:} Neka je $\gamma: \mathbb{R} \rightarrow M$ glatka krivulja kroz točku $p\in M$ te bez gubljenja općenitosti može se uzima se da vrijedi $\gamma(0) = p$. Tada se može definirati operator usmjerene derivacije duž krivulje $\gamma$ u točki $p$ kao mapu na slijedeći način: \\
+	\begin{gather}
+		X_{\gamma, p} : \boldsymbol{C}^\infty(M) \rightarrow R \\
+		f \mapsto (f \circ \gamma)'(0)
+	\end{gather}
+	Bitno je primijetiti kako je kompozicija $(f \circ \gamma)$ mapiranje unutar realnog prostora tako da se toj funkciji na uobičajan način može pronaći i evaluirati derivacija.
+	Intuitivno gledano $X_{\gamma, p}$ je brzina krivulje $\gamma$ u točki $p$.
+	
+	\paragraph{Tangencijalni prostor:} Neka je M manifold koji sadrži točku $p$. Tada je tangencijalni prostor vektorski prostor nad $\mathbb{R}$ sa skupom operatora usmjerene derivacije tako da vrijedi: \\
+	$T_p M := \{ X_{\gamma, p} \, | \, \gamma \, je \, glatka \, krivulja \, kroz \, p\}$ te sa nadodanim operatorima zbrajanja i skalarnog množenja.
+	
+	\begin{figure}[h!]
+		\includegraphics[width=\textwidth]{txm.png}
+		\caption{Na slici je prikazan manifold M. Parametrirana krivulja $\gamma(t)$ koja prolazi točkom $x$. Tangencijalni prostor manifolda M u točki x $T_x M$ te vektor usmjerene derivacije $v$ krivulje $\gamma (t)$ u točki $x$. }
+	\end{figure}
 	
 \chapter{Lijeve grupe i Lijeva algebra}
 
@@ -198,7 +228,7 @@ TODO
 	\newpage
 	\clearpage
 	
-\section{Lijeva grupa SE(3)}
+\section{Specijalna euklidska grupa - SE(3)}
 
 	\paragraph{}U ovom dijelu bit će definirano nekoliko različitih Lijevih grupa s konačnim ciljem definiranja specijalne ortogonalne grupe SO(3) te njenog proširenja na specijalnu Euklidsku grupu SE(3). 	
 	
@@ -211,12 +241,49 @@ TODO
 	
 	\paragraph{(Specijalna) Ortogonalna grupa:} Neka je skup G sačinjen od matrica $Q$ tako da vrijedi \\ 
 	$G = \{ Q \in GL(n, \mathbb{R}^n) \,|\, det \, Q = \pm 1\} := O(n)$. Budući da su matrice elementi skupa $GL(n, \mathbb{R}^n)$ njima se može pridodijeliti i naslijeđeni operator $\circ$. Takva Lijeva grupa $(O(n),\circ)$ zove se ortogonalna grupa. \\
-	Specijalna ortogonalna grupa $SO(3)$ je podgrupa ortogonalnoj grupi, uz uvjet da matrice moraju imati determinante jednake 1. Ta grupe se ujedno naziva i rotacijska grupa jer sadrži sve rotacijske matrice. \\
+	Specijalna ortogonalna grupa $SO(n)$ je podgrupa ortogonalnoj grupi, uz uvjet da matrice moraju imati determinante jednake 1. Ta grupe se ujedno naziva i rotacijska grupa jer sadrži sve rotacijske matrice. \\
 	Obje grupe lančano naslijeđuju karakteristike glatkog manifolda od opće linearne grupe.
 	
 	\paragraph{(Specijalna) Euklidska grupa:} Euklidska grupa kao podgrupe sadrži translacijsku Lijevu grupu $T(n)$ i ortogonalnu grupu $O(n)$. Svaki element u $E(n)$ sastoji se od translacije koju slijedi ortogonalna transformacija. \\
-	Specijalna Euklidska grupa kao poskup umjesto ortogonalne grupe sadrži specijalnu ortogonalnu grupu.
+	Specijalna Euklidska grupa kao podskup umjesto ortogonalne grupe sadrži specijalnu ortogonalnu grupu. U tom slučaju svaki član te grupe sadrži translaciju koju slijedi rotacija. Elementi te grupe su (n+1)x(n+1) matrice slijedećeg oblika: \\
 	
+	\begin{equation}
+		\left \{
+		\begin{bmatrix}
+		R_{3 \times 3} & v_{3 \times 1} \\
+		0 & 1
+		\end{bmatrix}
+		\, \Biggr\rvert \, R \in SO(3) \, , \, v \in \mathbb{R}^n
+		\right \} \in SE(3)
+	\end{equation}	
+	
+\newpage
+\clearpage
+
+\section{Lijeva algebra}
+
+	\paragraph{Algebra:} Algebra nad poljem K je skup od četiri elemenata $(A, +, \cdot, \bullet)$, gdje je $(A, +, \cdot)$ vektorski prostor nad poljem K, a $\bullet$ je produkt nad A, tj. bilinearno mapiranje: $\bullet : A \times A \rightarrow A$. \\
+	Algebra $(A, +, \cdot, \bullet)$ može biti:
+	\begin{enumerate}
+		\item Asocijativna ako vrijedi $\forall v, w, z \in A : v \bullet (w \bullet z) = (v \bullet w) \bullet z$
+		
+		\item Unitalna ako vrijedi $\exists e \in A : \forall v \in A : e \bullet v = v \bullet e = v$
+		
+		\item Komutativna ili abelijanska ako vrijedi $\forall v, w \in A : v \bullet w = w \bullet v$
+	\end{enumerate}
+	
+	\paragraph{Lijeva algebra:} Lijeva algebra je algebra čiji operator je Lijeva zagrada $[-,-]$ (tipično zvana komutator) za koju vrijede svojstva: 
+	
+	\begin{enumerate}
+		
+		\item Antisimetričnost: $\forall v \in A: [v, v] = 0$
+		
+		\item Jakobijev identitet: $\forall v, w, z \in A : [v,[w, z]] + [w,[z,v]] + [z,[v,w]] = 0$
+		
+	\end{enumerate} 
+	
+	Iz uvjeta o antisimetričnosti odmah vrijedi $[v,w]=-[w,v]$. Kod asocijativnih algebri komutator se definira kao $[v,w]:=v \bullet w - w \bullet v$.
+	\paragraph{Lijeva algebra Lijeve grupe:} Svaka Lijeva grupa ima svoju pripadajuću Lijevu algebru. Lijeva algebra $g$ od Lijeve grupe $G$ je tangencijalni prostor oko točke identiteta $T_e G$
 	
 \chapter{Zaključak}
 Zaključak.
@@ -238,4 +305,5 @@ A nonlinear geometric controller is implemented using C++ programming language w
 \keywords{geometric control, multirotor UAV, Lie groups, SE(3), ROS, Gazebo}
 \end{abstract}
 
+\chapter{literatura}
 \end{document}

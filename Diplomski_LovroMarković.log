@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.10)  14 JUL 2018 21:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.10)  16 JUL 2018 20:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1196,18 +1196,35 @@ File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 File: fig_overlap_charts.png Graphic file (type png)
 
 <use fig_overlap_charts.png>
-Package pdftex.def Info: fig_overlap_charts.png used on input line 162.
+Package pdftex.def Info: fig_overlap_charts.png used on input line 172.
 (pdftex.def)             Requested size: 483.69687pt x 259.4399pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 163.
- [4
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 173.
 
- <./fig_overlap_charts.png (PNG copy)>]
+Overfull \hbox (19.65608pt too wide) in paragraph at lines 178--179
+\T1/ptm/m/n/12 Neka je M ma-ni-fold. Tada se moºe kons-tru-irati vek-tor-ski pr
+os-tor nad $\U/msb/m/n/12 R$ \T1/ptm/m/n/12 na sli-je-de¢i na-£in: $\OT1/cmr/m/
+n/12 ([][](\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/1
+2 +\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^A\OT1/cmr/m/n/12 )$\T1/ptm/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+
+ []
+
+[4 <./fig_overlap_charts.png (PNG copy)>] <txm.png, id=49, 642.4pt x 441.65pt>
+File: txm.png Graphic file (type png)
+
+<use txm.png>
+Package pdftex.def Info: txm.png used on input line 194.
+(pdftex.def)             Requested size: 483.69687pt x 332.55078pt.
+ [5 <./txm.png>]
 Poglavlje 3.
-[5
+[6
 
 ]
-Overfull \hbox (13.53224pt too wide) in paragraph at lines 205--208
+Overfull \hbox (13.53224pt too wide) in paragraph at lines 235--238
  \T1/ptm/b/n/12 N-dimenzijska tran-s-la-cij-ska grupa:[] \T1/ptm/m/n/12 Mapa $\
 OML/cmm/m/it/12 '$ \T1/ptm/m/n/12 je kruta mapa ako vri-jedi $\OMS/cmsy/m/n/12 
 8\OML/cmm/m/it/12 v; w \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 R[]\OML/cmm/m/it/12 ;  
@@ -1217,7 +1234,7 @@ d\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v\OT1/cmr
  []
 
 
-Overfull \hbox (11.60983pt too wide) in paragraph at lines 205--208
+Overfull \hbox (11.60983pt too wide) in paragraph at lines 235--238
 \T1/ptm/m/n/12 Neka je skup $\OML/cmm/m/it/12 G$ \T1/ptm/m/n/12 sa-£i-njena od 
 svih kru-tih mapa tako da vri-jedi $\OML/cmm/m/it/12 G \OT1/cmr/m/n/12 = \OMS/c
 msy/m/n/12 f\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 : \U/msb/m/n/12 R[] \OMS/cmsy/m/
@@ -1226,46 +1243,58 @@ S/cmsy/m/n/12 g \OT1/cmr/m/n/12 :=
  []
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 209.
-[6
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 239.
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+
+ []
+
+[7
+
+] [8
 
 ]
 Poglavlje 4.
 No file Diplomski_LovroMarkoviÄ‡.bbl.
-[7
+[9
 
-] [8] (./Diplomski_LovroMarkoviÄ‡.aux) ) 
+] [10]
+Poglavlje 5.
+[11
+
+] (./Diplomski_LovroMarkoviÄ‡.aux) ) 
 Here is how much of TeX's memory you used:
- 19307 strings out of 493029
- 347925 string characters out of 6136234
- 445884 words of memory out of 5000000
- 22380 multiletter control sequences out of 15000+600000
+ 19309 strings out of 493029
+ 347933 string characters out of 6136234
+ 446806 words of memory out of 5000000
+ 22381 multiletter control sequences out of 15000+600000
  68356 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,8n,80p,1059b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/en
-c/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/c
-ourier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
-mes/utmr8a.pfb>
-Output written on Diplomski_LovroMarkoviÄ‡.pdf (12 pages, 189214 bytes).
+ 62i,12n,80p,1059b,610s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr
+o8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
+pfb>
+Output written on Diplomski_LovroMarkoviÄ‡.pdf (15 pages, 241678 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 139 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
