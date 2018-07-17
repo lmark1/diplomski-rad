@@ -33,5 +33,10 @@
 \contentsline {paragraph}{Algebra:}{8}
 \contentsline {paragraph}{Lijeva algebra:}{8}
 \contentsline {paragraph}{Lijeva algebra Lijeve grupe:}{8}
-\contentsline {chapter}{\numberline {4}Zaklju\IeC {\v c}ak}{9}
-\contentsline {chapter}{\numberline {5}literatura}{11}
+\contentsline {paragraph}{Eksponencijalna mapa:}{8}
+\contentsline {section}{\numberline {3.5}Algebra specijalne ortogonalne grupe $so(3)$}{8}
+\contentsline {chapter}{\numberline {4}Matemati\IeC {\v c}ki model letjelice}{10}
+\contentsline {chapter}{\numberline {5}Geometrijsko upravljanje}{11}
+\contentsline {chapter}{\numberline {6}Analiza simulacije}{12}
+\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{13}
+\contentsline {chapter}{\numberline {8}literatura}{15}

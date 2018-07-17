@@ -283,8 +283,90 @@ TODO
 	\end{enumerate} 
 	
 	Iz uvjeta o antisimetričnosti odmah vrijedi $[v,w]=-[w,v]$. Kod asocijativnih algebri komutator se definira kao $[v,w]:=v \bullet w - w \bullet v$.
-	\paragraph{Lijeva algebra Lijeve grupe:} Svaka Lijeva grupa ima svoju pripadajuću Lijevu algebru. Lijeva algebra $g$ od Lijeve grupe $G$ je tangencijalni prostor oko točke identiteta $T_e G$
 	
+	\paragraph{Lijeva algebra Lijeve grupe:} Svaka Lijeva grupa ima svoju pripadajuću Lijevu algebru. Lijeva algebra $g$ od Lijeve grupe $G$ je tangencijalni prostor oko točke identiteta $T_e G$.
+	
+	\paragraph{Eksponencijalna mapa:} Poveznica između Lijeve grupe i njene pripadajuće Lijeve algebre je eksponencijalna mapa. Ona je definirana na slijedeći način: $exp: T_eG \rightarrow	G$, tj. $exp: g \rightarrow G.$ \\ Postoji i logaritamska mapa koja služi za inverno mapiranje od Lijeve grupe prema pripadajućoj algebri.
+
+\todo[inline]{Definirati diferencijalne mape između tangencijalnih prostora}
+\section{Algebra specijalne ortogonalne grupe $so(3)$}
+
+	Naposlijetku bit će potrebno definirati pripadajuću Lijevu algebru $so(3)$ nad Lijevom grupom SO(3). \\
+	Lijeva algebra $so(3)$ je skup anti-simetričnih realnih matrica. Budući da je takav skup matrica proizašao iz tangencijalnog prostora rotacijske grupe SO(3) tada će te matrice zapravo predstavljati tenzore kutnih brzina oko neke konfiguracije $R$. \\
+	Na primjer, ako je rotacija ua kut $\psi$ oko z-osi definirana kao:
+	
+	\begin{equation}
+		R( \hat{e}_3, \psi ) = 
+		\begin{bmatrix}
+			cos(\psi)	&	-sin(\psi)	&	0 \\
+			sin(\psi)	&	cos(\psi)	&	0 \\
+			0			&	0			&	1 \\	
+		\end{bmatrix} \in SO(3)
+	\end{equation}
+	
+	\newpage
+	\clearpage
+	
+	Ako se sada razvije matrica rotacije u Taylorov red prvog stupnja dobit će se matrica infinitiezimalne rotacije: \\
+	\begin{equation}
+		R( \hat{e}_3, \partial \psi ) = I + \partial \psi 
+		\begin{bmatrix}
+			0	&	-1	&	0 \\
+			1	&	0	&	0 \\
+			0	&	0 	&	0
+		\end{bmatrix}
+		= I + \partial \psi J_z
+	\end{equation}
+	\\
+	\noindent Gdje je $J_z$ jedan od tri elementa koja definiraju bazu algebre $so(3)$. Ostali elementi baze su:
+	
+	\begin{equation}
+		J_1 = 
+		\begin{bmatrix}
+		0	&	0	&	0 \\
+		0	&	0	&	-1 \\
+		0	&	1 	&	0
+		\end{bmatrix} \\
+		\, , \, J_2 = 
+		\begin{bmatrix}
+		0	&	0	&	1 \\
+		0	&	0	&	0 \\
+		-1	&	0 	&	0
+		\end{bmatrix} 
+	\end{equation}
+	\\
+	Još se nazivaju i generatori rotacije jer njihovim uzastopnim primjenjivanjem se postiže rotacija za željeni kut na slijedeći način:
+	
+	\begin{align}
+		R( \hat{e}_3, \psi ) & = (I + \partial \psi J_z)^n \\
+							 & = \lim_{n \rightarrow \infty} \left (I + J_z \frac{\psi}{n} \right )^n \\
+							 & = e^{J_z \psi}
+	\end{align}
+	\\
+	Iz gornje relacije se također vidi veza između matrice rotacije, elementa grupe SO(3), i generatora infinitezimalne rotacije, elementa algebre ($so(3)$), preko prethodno definirane eksponencijalne mape. \\
+	Sada se može definirati opća rotacija oko vektora $\hat{n}$ za kut $\psi$ kao:
+	
+	\begin{equation}
+		R( \hat{n}, \phi ) = e^{(J_1 n_1 + J_2 n_2 + J_3 n_3)\psi}
+	\end{equation}
+	\\
+	Uzevši to u obzir, vektor kutne brzine $\vec{\omega} = [\omega_x, \omega_y, \omega_z]$, može se zapisati u obliku tenzora, tj. elementa algebre $so(3)$ kao: 
+	
+	\todo[inline]{Provjeriti u kodu matricu rotacije - bookmarkan wiki stranica}
+	\begin{equation}
+		\hat{\omega} = 
+		\begin{bmatrix}
+			0			&	-\omega_z	& 	\omega_y \\
+			\omega_z	&	0			& 	-\omega_x \\
+			-\omega_y	&	\omega_x	&	0
+		\end{bmatrix} \, , \, \hat{x}: \mathbb{R}^3 \rightarrow so(3)
+	\end{equation}
+	
+	\noindent Gdje kapa-operator mapiranje iz Realnog 3-dimenzionalnog prostora prema Lijevoj algebri $so(3)$. Njemu inverzan operator je v-operator koja je definirana kao $\check{x}:so(3) \rightarrow \mathbb{R}^3$.
+	
+\chapter{Matematički model letjelice}
+\chapter{Geometrijsko upravljanje}
+\chapter{Analiza simulacije}
 \chapter{Zaključak}
 Zaključak.
 
