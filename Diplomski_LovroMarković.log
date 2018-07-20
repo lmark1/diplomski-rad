@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.10)  20 JUL 2018 13:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.10)  20 JUL 2018 18:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1273,27 +1273,39 @@ Package pdftex.def Info: model.png used on input line 444.
 
  <./model.png>]
 Poglavlje 5.
-[12
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--462
+
+ []
+
+<krivulja.png, id=79, 1927.2pt x 1084.05pt>
+File: krivulja.png Graphic file (type png)
+ <use krivulja.png>
+Package pdftex.def Info: krivulja.png used on input line 466.
+(pdftex.def)             Requested size: 483.68085pt x 142.25475pt.
+ [12
+
+ <./krivulja.png>] [13
 
 ]
 Poglavlje 6.
-[13
+[14
 
 ]
 Poglavlje 7.
 No file Diplomski_LovroMarković.bbl.
-[14
+[15
 
-] [15]
+] [16]
 Poglavlje 8.
-[16
+[17
 
 ] (./Diplomski_LovroMarković.aux) ) 
 Here is how much of TeX's memory you used:
- 19330 strings out of 493029
- 348277 string characters out of 6136234
+ 19335 strings out of 493029
+ 348356 string characters out of 6136234
  446902 words of memory out of 5000000
- 22400 multiletter control sequences out of 15000+600000
+ 22404 multiletter control sequences out of 15000+600000
  70677 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,80p,1059b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1318,10 +1330,10 @@ e/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Diplomski_LovroMarković.pdf (20 pages, 279358 bytes).
+Output written on Diplomski_LovroMarković.pdf (21 pages, 401127 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
+ 170 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

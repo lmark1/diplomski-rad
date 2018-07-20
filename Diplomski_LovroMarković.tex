@@ -444,9 +444,35 @@ Radi lakše pretvorbe uvodi se matrični zapis na slijedeći način:
 	\includegraphics[width=\textwidth]{model.png}
 	\caption{Vizualni prikaz letjelice i koordinatnih osi.}
 \end{figure}
-
-\todo[inline]{spomenuti morusa i pokretne mase}
+Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u morus\_description ROS paketu.
+\todo[inline]{spomenuti morusa i pokretne mase staviti referencu na github}
 \chapter{Geometrijsko upravljanje}
+
+	\section{Uvod}
+	
+	\paragraph{}Ako se pri upravljanju sustavima njegov konfiguracijski prostor, odnosno njegove varijable stanja, shvaća kao glatki manifold tada se govori o geometrijskom upravljanju sustavima. Kao što je već rečeno, jedna od prednosti pri upravljanju u prostoru manifolda jest koordinatna invarijantnost. Nakon što je odabran i fiksiran početni koordinatni sustav svo daljnje upravljanje je neovisno o trenutnoj konfiguraciji sustava. \\
+	Neka je definiran sustav:
+	
+	\begin{equation}
+		\dot{x}=f(x), \, x \in M
+	\end{equation}
+	Uvodi se pojam vektorskih polja kao skup svih mapa od manifolda M prema TM, odnosno tangencijalnom svežnju (unija svih tangencijalnih prostora $T_xM ,\, \forall x\in M$). \\
+	Tada je f jedno vektorsko polje, tj. glatka mapa od manifolda prema tangencijalnom prostoru $T_xM$. Dakle dinamički sustav je vektorsko polje, tj. određen je tokom samo jednog vektorskog polja i ovisi o početnim uvjetima. Pod tokom vektorskog polja misli se na krivulju $x(t)$ kao rješenje sustava. \\
+	Kako bi se upravljalo dinamičkim sustavom mora se uzeti u obzir familija vektorskih polja $f(\cdot, u)$ parametrirana sa upravljačkom varijablom $u$. \\
+	\begin{equation}
+		\dot{x} = f(x(t),\, u(t)), \, x(t)\in M, \, u(t)\in \Ua \subset \mathbb{R}^m
+	\end{equation}
+	\begin{figure}[h!]
+		\includegraphics[width=\textwidth, height=5cm]{krivulja.png}
+		\caption{Krivulja rješenja sustava uz dodane upravljačke funkcije $u_1(t)$, $u_2(t)$ i $u_3(t)$}
+	\end{figure}
+	
+	\newpage
+	\clearpage
+	
+	\section{Geometrijsko upravljanje letjelicom}
+	\paragraph{}Ukoliko se promatra sustav letjelice tada su varijable stanja razvijene na manifoldu Lijeve grupe SE(3), njihove derivacije leže na vektorskim poljima, odnosno tangencijalnom svežnju koji tada čini Lijevu algebru $se(3)$.
+	
 \chapter{Analiza simulacije}
 \chapter{Zaključak}
 Zaključak.

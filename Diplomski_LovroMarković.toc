@@ -38,6 +38,10 @@
 \contentsline {chapter}{\numberline {4}Matemati\IeC {\v c}ki model letjelice}{10}
 \contentsline {paragraph}{}{10}
 \contentsline {chapter}{\numberline {5}Geometrijsko upravljanje}{12}
-\contentsline {chapter}{\numberline {6}Analiza simulacije}{13}
-\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{14}
-\contentsline {chapter}{\numberline {8}literatura}{16}
+\contentsline {section}{\numberline {5.1}Uvod}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {section}{\numberline {5.2}Geometrijsko upravljanje letjelicom}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {chapter}{\numberline {6}Analiza simulacije}{14}
+\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{15}
+\contentsline {chapter}{\numberline {8}literatura}{17}
