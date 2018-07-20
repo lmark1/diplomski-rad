@@ -36,7 +36,8 @@
 \contentsline {paragraph}{Eksponencijalna mapa:}{8}
 \contentsline {section}{\numberline {3.5}Algebra specijalne ortogonalne grupe $so(3)$}{8}
 \contentsline {chapter}{\numberline {4}Matemati\IeC {\v c}ki model letjelice}{10}
-\contentsline {chapter}{\numberline {5}Geometrijsko upravljanje}{11}
-\contentsline {chapter}{\numberline {6}Analiza simulacije}{12}
-\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{13}
-\contentsline {chapter}{\numberline {8}literatura}{15}
+\contentsline {paragraph}{}{10}
+\contentsline {chapter}{\numberline {5}Geometrijsko upravljanje}{12}
+\contentsline {chapter}{\numberline {6}Analiza simulacije}{13}
+\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{14}
+\contentsline {chapter}{\numberline {8}literatura}{16}
