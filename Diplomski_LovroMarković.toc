@@ -42,6 +42,8 @@
 \contentsline {paragraph}{}{12}
 \contentsline {section}{\numberline {5.2}Geometrijsko upravljanje letjelicom}{13}
 \contentsline {paragraph}{}{13}
-\contentsline {chapter}{\numberline {6}Analiza simulacije}{14}
-\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{15}
-\contentsline {chapter}{\numberline {8}literatura}{17}
+\contentsline {section}{\numberline {5.3}Pogre\IeC {\v s}ke pra\IeC {\'c}enja reference}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {chapter}{\numberline {6}Analiza simulacije}{15}
+\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{16}
+\contentsline {chapter}{\numberline {8}literatura}{18}

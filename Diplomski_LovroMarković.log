@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.10)  20 JUL 2018 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.6.18)  25 JUL 2018 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Diplomski_LovroMarković.tex
 (./Diplomski_LovroMarković.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 37 language(s) loaded.
 (./fer.cls
 Document Class: fer 
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -1007,19 +1007,19 @@ Package: chngcntr 2009/09/02 v1.0a change counter resetting
 (./Diplomski_LovroMarković.aux)
 \openout1 = `Diplomski_LovroMarković.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -1126,36 +1126,36 @@ ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for T1+phv on input line 85.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 85.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 86.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 85.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 86.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 85.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 86.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 85.
-LaTeX Font Info:    Try loading font information for U+msa on input line 85.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 86.
+LaTeX Font Info:    Try loading font information for U+msa on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 85.
+LaTeX Font Info:    Try loading font information for U+msb on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+rsfs on input line 85.
+LaTeX Font Info:    Try loading font information for OMS+rsfs on input line 86.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/calrsfs/OMSrsfs.fd) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 88.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 89.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -1172,7 +1172,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 ]
 Poglavlje 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
@@ -1181,8 +1181,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 ]
 Poglavlje 2.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 108.
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 115
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 109.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 116
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
@@ -1196,12 +1196,12 @@ File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 File: fig_overlap_charts.png Graphic file (type png)
 
 <use fig_overlap_charts.png>
-Package pdftex.def Info: fig_overlap_charts.png used on input line 173.
+Package pdftex.def Info: fig_overlap_charts.png used on input line 174.
 (pdftex.def)             Requested size: 483.69687pt x 259.4399pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 174.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 175.
 
-Overfull \hbox (19.65608pt too wide) in paragraph at lines 179--180
+Overfull \hbox (19.65608pt too wide) in paragraph at lines 180--181
 \T1/ptm/m/n/12 Neka je M ma-ni-fold. Tada se mo�e kons-tru-irati vek-tor-ski pr
 os-tor nad $\U/msb/m/n/12 R$ \T1/ptm/m/n/12 na sli-je-de�i na-�in: $\OT1/cmr/m/
 n/12 ([][](\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/1
@@ -1209,7 +1209,7 @@ n/12 ([][](\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
@@ -1217,14 +1217,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--184
 File: txm.png Graphic file (type png)
 
 <use txm.png>
-Package pdftex.def Info: txm.png used on input line 195.
+Package pdftex.def Info: txm.png used on input line 196.
 (pdftex.def)             Requested size: 483.69687pt x 332.55078pt.
  [5 <./txm.png>]
 Poglavlje 3.
 [6
 
 ]
-Overfull \hbox (13.53224pt too wide) in paragraph at lines 236--239
+Overfull \hbox (13.53224pt too wide) in paragraph at lines 237--240
  \T1/ptm/b/n/12 N-dimenzijska tran-s-la-cij-ska grupa:[] \T1/ptm/m/n/12 Mapa $\
 OML/cmm/m/it/12 '$ \T1/ptm/m/n/12 je kruta mapa ako vri-jedi $\OMS/cmsy/m/n/12 
 8\OML/cmm/m/it/12 v; w \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 R[]\OML/cmm/m/it/12 ;  
@@ -1234,7 +1234,7 @@ d\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v\OT1/cmr
  []
 
 
-Overfull \hbox (11.60983pt too wide) in paragraph at lines 236--239
+Overfull \hbox (11.60983pt too wide) in paragraph at lines 237--240
 \T1/ptm/m/n/12 Neka je skup $\OML/cmm/m/it/12 G$ \T1/ptm/m/n/12 sa-�i-njena od 
 svih kru-tih mapa tako da vri-jedi $\OML/cmm/m/it/12 G \OT1/cmr/m/n/12 = \OMS/c
 msy/m/n/12 f\OML/cmm/m/it/12 ' \OT1/cmr/m/n/12 : \U/msb/m/n/12 R[] \OMS/cmsy/m/
@@ -1243,9 +1243,9 @@ S/cmsy/m/n/12 g \OT1/cmr/m/n/12 :=
  []
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 240.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 241.
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--250
+Underfull \hbox (badness 10000) in paragraph at lines 249--251
 
  []
 
@@ -1254,7 +1254,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 248--250
 ] [8
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 311--312
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
  []
 
@@ -1267,47 +1267,61 @@ Poglavlje 4.
 ] <model.png, id=74, 716.6775pt x 506.89375pt>
 File: model.png Graphic file (type png)
  <use model.png>
-Package pdftex.def Info: model.png used on input line 444.
+Package pdftex.def Info: model.png used on input line 445.
 (pdftex.def)             Requested size: 483.69687pt x 342.11531pt.
  [11
 
  <./model.png>]
 Poglavlje 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--462
+Underfull \hbox (badness 10000) in paragraph at lines 459--463
 
  []
 
 <krivulja.png, id=79, 1927.2pt x 1084.05pt>
 File: krivulja.png Graphic file (type png)
  <use krivulja.png>
-Package pdftex.def Info: krivulja.png used on input line 466.
+Package pdftex.def Info: krivulja.png used on input line 467.
 (pdftex.def)             Requested size: 483.68085pt x 142.25475pt.
  [12
 
- <./krivulja.png>] [13
+ <./krivulja.png>] <gimbal_lock.png, id=83, 853.1875pt x 269.005pt>
+File: gimbal_lock.png Graphic file (type png)
+ <use gimbal_lock.png>
+Package pdftex.def Info: gimbal_lock.png used on input line 480.
+(pdftex.def)             Requested size: 483.69687pt x 152.5094pt.
 
-]
+[13
+
+ <./gimbal_lock.png>] <controller.png, id=90, 553.06625pt x 264.99pt>
+File: controller.png Graphic file (type png)
+
+<use controller.png>
+Package pdftex.def Info: controller.png used on input line 491.
+(pdftex.def)             Requested size: 483.69548pt x 142.26357pt.
+ [14
+
+ <./controller.png>]
 Poglavlje 6.
-[14
+[15
 
 ]
 Poglavlje 7.
 No file Diplomski_LovroMarković.bbl.
-[15
+[16
 
-] [16]
+] [17]
 Poglavlje 8.
-[17
+[18
 
 ] (./Diplomski_LovroMarković.aux) ) 
 Here is how much of TeX's memory you used:
- 19335 strings out of 493029
- 348356 string characters out of 6136234
- 446902 words of memory out of 5000000
- 22404 multiletter control sequences out of 15000+600000
- 70677 words of font info for 118 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 19346 strings out of 493933
+ 348546 string characters out of 6157160
+ 444290 words of memory out of 5000000
+ 22326 multiletter control sequences out of 15000+600000
+ 71813 words of font info for 119 fonts, out of 8000000 for 9000
+ 600 hyphenation exceptions out of 8191
  62i,12n,80p,1059b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dv
 ips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
@@ -1329,11 +1343,12 @@ share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Diplomski_LovroMarković.pdf (21 pages, 401127 bytes).
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Diplomski_LovroMarković.pdf (22 pages, 661870 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
+ 181 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -29,8 +29,9 @@
 \counterwithout*{equation}{chapter}
 %\counterwithin*{equation}{subsection}
 % \counterwithin*{figure}{section}
-\counterwithout*{figure}{chapter}
-\counterwithin*{figure}{subsection}
+\counterwithin*{figure}{chapter}
+% \counterwithout*{figure}{section}
+% \counterwithin*{figure}{subsection}
 
 %pretty formating - formatiranje raznih 
 \renewcommand{\thechapter}{\arabic{chapter}}
@@ -470,8 +471,37 @@ Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u moru
 	\newpage
 	\clearpage
 	
-	\section{Geometrijsko upravljanje letjelicom}
-	\paragraph{}Ukoliko se promatra sustav letjelice tada su varijable stanja razvijene na manifoldu Lijeve grupe SE(3), njihove derivacije leže na vektorskim poljima, odnosno tangencijalnom svežnju koji tada čini Lijevu algebru $se(3)$.
+\section{Geometrijsko upravljanje letjelicom}
+	
+	\paragraph{}Ukoliko se promatra sustav letjelice tada su varijable stanja razvijene na manifoldu Lijeve grupe SE(3), njihove derivacije leže na vektorskim poljima, odnosno tangencijalnom svežnju koji tada čini Lijevu algebru $se(3)$. Dakle elementi Lijeve grupe predstavljat će konfiguracije, tj. orijentaciju i pomak sustava letjelice dok elementi Lijeve algebre će predstavljati njene kutne, odnosno linearne brzine. \\
+	Jedna od prednosti ovakvog načina upravljanja javlja se prilikom prikaza orijentacije sustava pomoću rotacijske matrice koja jasno definira vektore lokalnog koordinatnog sustava. Kod klasičnog upravljanja korištenjem Eulerovih kuteva javljaju se singulariteti. Ako je definiran neki redoslijed rotacija oko osi (npr. $x \rightarrow y \rightarrow z$) te ako je druga po redu rotacija za kut 90 ili 270 tada se dešava tzv. \textit{"Gimbal lock"}. U tom trenutku se gubi 5jedan stupanj slobode, odnosno preostale dvije rotacije se odvijaju oko iste osi.
+	
+	\begin{figure}[h!]
+		\includegraphics[width=\textwidth]{gimbal_lock.png}
+		\caption{Prikaz preklapanja osi prilikom Eulerovih rotacija. Na desnoj slici može se vidjeti kako će rotacije oko x i z osi biti istovjetne.}
+	\end{figure}
+	
+	\noindent Prilikom predstavljanja orijentacije putem kvaterniona ne javlja se problem singulariteta, ali zato se pojavljuje problem dvosmislenosti. Drugim riječima kvaternioni $q$ i $-q$ predstavljaju isti kvaternion, odnosno istu rotaciju u prostoru. Opisani problemi ne pojavljuju se prilikom predstavljanja orijentacije sustava kao element Lijeve grupe SO(3). \\
+	Geometrijsko upravljanje letjelicom svodi se na izračunavanje ukupne sile potiska svih rotora te momenata oko osi lokalnog sustava na temelju zadanih vrijednosti pozicije, linearne brzine i akceleracije, odnosno orijentacije, kutne brzine i akceleracije. Sama struktura regulatora je kaskadna, prvo se računa smjer i ukupni iznos sile potiska na temelju pozicijskih referenci te zatim momenti na temelju orijentacijskih referenci. Naposlijetku se dobivene upravljačke vrijednosti sile potiska i momenata preračunavaju u brzine zakreta rotora kako bi se mogle primijeniti na sustav letjelice.
+
+	\newpage
+	\clearpage
+
+	\begin{figure}[h!]
+		\includegraphics[width=\textwidth, height=5cm]{controller.png}
+		\caption{Prikaz kaskadne strukture geometrijskog kontrolera.}
+	\end{figure}
+	
+	U nastavku bit će prikazana sinteza upravljčkog zakona, no najprije će biti potrebno definirati funkcije pogreške. To će biti lako napraviti za praćenje pozicije budući da je se ono odvija unutar translacijske grupe T(3) čiji su elementi dio $\mathbb{R}^3$. Pogreške orijentacije i kutne brzine bit će potrebno pažljivo definirati budući da leže unutar grupe SO(3), odnosno unutar njenog tangencijalnog prostora.
+	
+\section{Pogreške praćenja reference}
+
+	\paragraph{}Prije nego se započne sinteza geometrijskog regulatora potrebno je definirati funkcije pogrešaka pozicije, orijentacije te linearne i kutne brzine s obzirom na željenu vrijednost (u ostatku teksta sadrži d - \textit{desired} u subskriptu) i trenutnu vrijednost. \\
+	Pogreške u poziciji i linearnoj brzini kao translacijski dio SE(3) grupe dane su kao:
+	\begin{gather}
+		e_x = x - x_d \\
+		e_v = v - v_d
+	\end{gather}
 	
 \chapter{Analiza simulacije}
 \chapter{Zaključak}
