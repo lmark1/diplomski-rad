@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.6.18)  27 JUL 2018 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.6.18)  30 JUL 2018 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Diplomski_LovroMarković.tex
-(./Diplomski_LovroMarković.tex
+**Diplomski_LovroMarkovi.tex
+(./Diplomski_LovroMarkovi.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 37 language(s) loaded.
 (./fer.cls
@@ -1004,8 +1004,8 @@ Package: chngcntr 2009/09/02 v1.0a change counter resetting
 (/usr/share/texlive/texmf-dist/tex/latex/calrsfs/calrsfs.sty
 \symrsfscript=\mathgroup6
 )
-(./Diplomski_LovroMarković.aux)
-\openout1 = `Diplomski_LovroMarković.aux'.
+(./Diplomski_LovroMarkovi.aux)
+\openout1 = `Diplomski_LovroMarkovi.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
 LaTeX Font Info:    ... okay on input line 58.
@@ -1160,12 +1160,12 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 89.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [1] [3]
-(./Diplomski_LovroMarković.toc
+(./Diplomski_LovroMarkovi.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
 )
 \tf@toc=\write4
-\openout4 = `Diplomski_LovroMarković.toc'.
+\openout4 = `Diplomski_LovroMarkovi.toc'.
 
  [4
 
@@ -1307,45 +1307,45 @@ Poglavlje 6.
 
 ]
 Poglavlje 7.
-No file Diplomski_LovroMarković.bbl.
+No file Diplomski_LovroMarkovi.bbl.
 [16
 
 ] [17]
 Poglavlje 8.
 [18
 
-] (./Diplomski_LovroMarković.aux) ) 
+] (./Diplomski_LovroMarkovi.aux) ) 
 Here is how much of TeX's memory you used:
  19346 strings out of 493933
- 348546 string characters out of 6157160
+ 348524 string characters out of 6157160
  444290 words of memory out of 5000000
  22326 multiletter control sequences out of 15000+600000
  71813 words of font info for 119 fonts, out of 8000000 for 9000
  600 hyphenation exceptions out of 8191
- 62i,12n,80p,1059b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dv
-ips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Diplomski_LovroMarković.pdf (22 pages, 661864 bytes).
+ 62i,12n,80p,1057b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvip
+s/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cme
+x10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Diplomski_LovroMarkovi.pdf (22 pages, 661864 bytes).
 PDF statistics:
  181 PDF objects out of 1000 (max. 8388607)
  124 compressed objects within 2 object streams
