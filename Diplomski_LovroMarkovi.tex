@@ -25,7 +25,7 @@
 
 %counter reset - counteri za equatione figure itd.
 \usepackage{chngcntr}
-\counterwithout*{equation}{chapter}
+\counterwithin*{equation}{chapter}
 %\counterwithin*{equation}{subsection}
 % \counterwithin*{figure}{section}
 \counterwithin*{figure}{chapter}
@@ -196,7 +196,6 @@ TODO
 	\end{figure}
 	
 \chapter{Lijeve grupe i Lijeva algebra}
-
 
 	\paragraph{}Lijeva teorija je od velike važnosti i u fizici i u diferencijalnoj geometriji. U ovom dijelu bit će predstavljen koncept Lijeve grupe te pripadajuće Lijeve algebre. Fokus će biti usmjeren prema Specijalnim Euklidskim grupama SE(3) budući da su one predmet zanimljive u kontekstu ovog rada.
 	
@@ -374,7 +373,7 @@ TODO
 \noindent Općenite jednadžbe gibanja takvog sustava su:
 \begin{gather}
 	\dot{x} = v \\
-	m \dot{v} = mge_3 - fRe_3 \\
+	m \dot{v} = mge_3 - fRe_3 \label{thrust_dyn}\\
 	\dot{R} = R\hat{\Omega} \\
 	J\dot{\Omega} + \Omega \times J\Omega = M
 \end{gather}
@@ -526,7 +525,7 @@ Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u moru
 	\begin{align}
 		\frac{d}{dt} \Psi(\gamma(t), \eta(t)) &= d_1\Psi(\gamma(t), \eta(t)) \cdot \gamma '(t) + d_2\Psi(\gamma(t), \eta(t)) \cdot \eta ' (t)\\
 		&= d_1\Psi(\gamma(t), \eta(t)) \cdot \gamma '(t) + (- \Ta(\gamma(t), \eta(t))(d_1\Psi(\gamma(t), \eta(t)) \cdot \eta'(t)) \\
-		&= d_1\Psi(\gamma(t), \eta(t)) \cdot (\gamma '(t) - \Ta(\gamma(t), \eta(t))\eta'(t)) \\
+		&= d_1\Psi(\gamma(t), \eta(t)) \cdot (\gamma '(t) - \Ta(\gamma(t), \eta(t))\eta'(t)) \label{error}\\
 		&= d_1\Psi(\gamma(t), \eta(t)) \dot{e}(t)
 	\end{align}
 	Dakle, kao pogreška brzine između krivulja $\gamma$ i $\eta$ odabire se $\dot{e}(t)$, a za pogrešku u konfiguraciji uzimat će se diferencijal s obzirom na prvi argument funkcije pogreške praćenja reference $d_1\Psi(\gamma(t), \eta(t)$.
@@ -548,11 +547,51 @@ Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u moru
 	
 	Gdje su kao pogreška konfiguracije $e_R$ i pogreška slijeđenja kutne brzine odabrane kao: 
 	\begin{gather}
-		e_R(R, R_d) = \frac{1}{2}(R_d^TR - R^TR_d)^{\text{V}} \\
-		e_{\Omega}(R, \Omega, R_d, \Omega_d) = \Omega - R^TR_d\Omega_d
+		e_R(R, R_d) = \frac{1}{2}(R_d^TR - R^TR_d)^{\text{V}} \label{e_R}\\
+		e_{\Omega}(R, \Omega, R_d, \Omega_d) = \Omega - R^TR_d\Omega_d \label{e_omega}
 	\end{gather}
 	Izvod se nalazi u dodatku.
 	
+	\subsection{Funkcije pogreške u T(3) prostoru}
+	Budući da je translacijska grupa definirana nad $\mathbb{R}^3$ prostorom, funkcije pogreške linearne pozicije i brzine su jasno definirane i glase:
+	\begin{gather}
+		e_x = x - x_d \\
+		e_v = v - v_d \label{e_v}
+	\end{gather}
+	
+	\newpage
+	\clearpage
+	
+\section{Upravljački zakon}
+
+	Geometrijsko upravljanje bit će realizirano na dva načina: pozicijsko upravljanje i upravljanje orijentacijom. Kod pozicijskog upravljanja referentne vrijednosti podrazumijevat će poziciju - $x_d$ i vektor smjera x-osi koordinatnog sustava letjelice - $b_{1d}$. \\
+	Referentne vrijednosti upravljanja orijentacijom su visina, te kompletna matrica rotacije koordinatnog sustava letjelice - $R_d$.
+	Budući da su oba upravljačka načina relativno slična, najprije će biti predstavljen pozicijski način upravljanja budući da on obuhvaća i upravljanje orijentacijom. 
+	
+	\subsection{Pozicijski način upravljanja}
+	Upravljačke vrijednosti za ukupni potisak i momente u pozicijskom načinu upravljanja su slijedeće:
+	\begin{gather}
+		f = - (- k_x e_x - k_v e_v - mg e_3 + m \ddot{x}) \cdot Re_3 \label{thrust_ctrl} \\
+		M = -k_R e_R - k_\Omega e_\Omega + \Omega \times J \Omega - J(\hat{\Omega}R^TR_c\Omega_c - R^TR_c\dot{\Omega}_c)
+	\end{gather}
+	
+	gdje su:
+	\begin{itemize}
+		\item $R_c \in SO(3)$ je izračunata orijentacija i iznosi $[\vec{b}_{1c}, \vec{b}_{3c} \times \vec{b}_{1c}, \vec{b}_{3c}]$ 
+		\item $\Omega_c \in \mathbb{R}^3$ je izračunata kutna brzina letjelice 
+		\item $\dot{\Omega}_c \in \mathbb{R}^3$ je izračunata kutna akceleracija letjelice
+	\end{itemize}
+	Budući da željeni smjer x-osi letjelice $b_{1d}$ ne mora uvijek ležati u na ravnini čija je normala vektor potiska letjelice potrebno je napraviti projekciju i normalizaciju željenog vektora smjera na spomenutu ravninu na slijedeći način:
+	\begin{equation}
+		b_{1c} = - \frac{1}{\Vert \vec{b}_{3c} \times \vec{b}_{1d} \Vert}(\vec{b}_{3c} \times (\vec{b}_{3c} \times \vec{b}_{1d}))
+	\end{equation}
+	Vektor potiska računa se na slijedeći način:
+	\begin{equation}
+		\vec{b}_{3c} = \frac{- k_x e_x - k_v e_v - mg e_3 + m \ddot{x}}{\Vert - k_x e_x - k_v e_v - mg e_3 + m \ddot{x} \Vert}
+	\end{equation}
+	Izvod upravljačkog zakona se nalazi u dodatku.
+	
+	\subsection{Upravljanje orijentacijom}
 \chapter{Analiza simulacije}
 \chapter{Zaključak}
 Zaključak.
@@ -575,10 +614,86 @@ Zaključak.
 		&= - \frac{1}{2}tr[ -R_d^TR \, (R^TR_d\hat{\Omega}_dR_d^TR) + R_d^TR\hat{\Omega} ] \\
 		&=  - \frac{1}{2}tr[ -R_d^TR \, (R^TR_d\Omega_d)^\wedge + R_d^TR\hat{\Omega} ] \\
 		&= - \frac{1}{2}tr[ -R_d^TR (\Omega - R^TR_d\Omega_d)^\wedge ] \\
-		&= \frac{1}{2}(R_d^TR - R^TR_d)^\wedge \cdot (\Omega - R^TR_d\Omega_d) \\
+		&= \frac{1}{2}(R_d^TR - R^TR_d)^\text{V} \cdot (\Omega - R^TR_d\Omega_d) \\
 		&= e_R \cdot e_\Omega
 	\end{align*}
 	
+	U posljednje dvije linije može se prepoznati izraz \ref{error}. Stoga je prvi faktor uzet kao pogreška konfiguracije, a drugi kao pogreška brzine slijeđenja.
+	
+	\newpage
+	\clearpage
+	
+	\section{Pozicijski način upravljanja}
+	Kako bi se odabrao upravljački zakon \ref{thrust_ctrl} najprije je potrebno napisati dinamiku pogreške linearne brzine \ref{e_v}. Zatim odabrati zadovoljavajući upravljački zakon te analizom stabilnosti pokazati kako je ta pogreška stabilna. 
+	\todo[inline]{Staviti referencu na izvod stabilnosti}
+	\begin{gather*}
+		e_v = v - v_d \,/ \cdot m \\
+		me_v = mv - mv_d \, / \cdot \frac{d}{dt} \\
+		m\dot{e}_v = m \ddot{x} - m\ddot{x}_d
+	\end{gather*}
+	Sada se u gornji izraz uvrštava jednadžba gibanje \ref{thrust_dyn} iz čega slijedi:
+	\begin{equation}
+		m\dot{e}_v = mge_3 - fRe_3 - m\ddot{x}_d \label{dyn_v}
+	\end{equation}
+	Neka je $A\in\mathbb{R}^3$ željena upravljačka veličina potiska. Tada vrijedi:
+	\begin{gather}
+		A = \Vert A \Vert R_d e_3 \\
+		f = - A \cdot Re_3
+	\end{gather}
+	U svrhu ugrađivanja pogreške orijentacije u dinamiku pogreške brzine, izrazu \ref{dyn_v} dodaje i oduzima se slijedeći izraz:
+	\begin{equation}
+		\frac{f}{(R_de_d)^TRe_3}R_d e_3 = \frac{\Vert A \Vert R_d e_3 \cdot Re_3}{(R_de_d)^TRe_3}\frac{A}{\Vert A \Vert} = - A
+	\end{equation}
+	
+	Izraz \ref{dyn_v} sada poprima slijedeći oblik:
+	\begin{align*}
+		m\dot{e}_v =& m \ddot{x} - m\ddot{x}_d \\
+		& + \frac{f}{(R_de_d)^TRe_3}R_d e_3 - \frac{f}{(R_de_d)^TRe_3}R_d e_3 \\
+		& - \frac{f}{(R_de_d)^TRe_3}((R_de_d)^TRe_3)Re_3 \\
+	\end{align*}
+	Ako se sada uvede nova varijabla $X$ koja će sadržavati 3. i 5. član gornjeg izraza tada se gornja jednadžba pojednostavljuje na:
+	\begin{equation*}
+		m\dot{e}_v = mge_3 - m\ddot{x}_d + A + X
+	\end{equation*}
+	Sada se upravljački zakon $A$ odabire na način da se kompenzira dinamika sustava: 
+	\begin{gather}
+		A = -k_x e_x - k_ve_v - mge_3 + m\ddot{x}_d \\
+		m\dot{e}_v = -k_x e_x - k_v e_v + X
+	\end{gather}
+	
+	\newpage
+	\clearpage
+	
+	Analogno, kako bi se odabrao upravljači moment najprije je napisati jednadžbu dinamike pogreške kutne brzine \ref{e_omega}. Zatim odabrati odgovarajući upravljački zakon te analizom stabilnosti pokazati kako je ta pogreška stabilna.
+	\\ Uz slijedeća svojstva:
+	\begin{gather}
+		(Ax)^\wedge = A\hat{x}A^T \\
+		\hat{\Omega}\Omega = 0 \, , \Omega\in so(3)
+	\end{gather}
+	vrijedi:
+	\begin{align*}
+		\frac{d}{dt} e_\Omega &= \dot{\Omega} - \left(\frac{d}{dt}(R^TR_d)\Omega_d + R^TR_d\dot{\Omega}_d\right) \\
+		&= \dot{\Omega} - ( (R_d^TR\hat{e}_\Omega)^T\Omega_d + R^TR_d\dot{\Omega}_d) \\
+		&= \dot{\Omega} - (-\hat{e}_\Omega R^TR_d\Omega_d + R^TR_d\dot{\Omega}_d)\\
+		&= \dot{\Omega} - (- (\hat{\Omega} - (R^TR_d\Omega_d)^\wedge)R^TR_d\Omega_d + R^TR_d\dot{\Omega}_d)\\
+		&= \dot{\Omega} - (- \hat{\Omega}R^TR_d\Omega_d + (R^TR_d\Omega_d)^\wedge R^TR_d\Omega_d + R^TR_d\dot{\Omega}_d)\\
+		&= \dot{\Omega} - (- \hat{\Omega}R^TR_d\Omega_d + R^TR_d\Omega_d\Omega_d + R^TR_d\dot{\Omega}_d) \\
+		&= \dot{\Omega} + \hat{\Omega}R^TR_d\Omega_d - R^TR_d\dot{\Omega}_d
+	\end{align*}
+	Ako se sada u gornju dinamiku pogreške uvrsti izraz \ref{e_omega} dobije se slijedeće:
+	\begin{gather*}
+		\dot{e}_\Omega = \dot{\Omega} + \hat{\Omega}R^TR_d\Omega_d - R^TR_d\dot{\Omega}_d / \cdot J\\
+		J\dot{e}_\Omega = J \dot{\Omega} + J(\hat{\Omega}R^TR_d\Omega_d - R^TR_d\dot{\Omega}_d) \\
+		J\dot{e}_\Omega = M - \Omega \times J\Omega + J(\hat{\Omega}R^TR_d\Omega_d - R^TR_d\dot{\Omega}_d)
+	\end{gather*}
+	Izraz za M se sada odabire na način da se kompenzira dinamika pogreške:
+	\begin{equation}
+		M = -k_R e_R - k_\Omega e_\Omega + \Omega \times J \Omega - J(\hat{\Omega}R^TR_d\Omega_d - R^TR_d\dot{\Omega}_d) \label{M_u}
+	\end{equation}
+	Uvrštavanje \ref{M_u} u izraz za dinamiku pogreške dobije se:
+	\begin{equation}
+		J\dot{e}_\Omega = -k_R e_r - k_\Omega e_\Omega
+	\end{equation}
 \begin{sazetak}
 Ravijen je nelinearni geometrijski regulator za upravljanje multirotorskom letjelicom s benzinskim motorima. Regulator je implementiran u programskom jeziku C++ u ROS okruženju te ispitan korištenjem simulacijskog okruženja Gazebo na postojećem modelu multirotorske bespilotne letjelice s benzinskim motorima i pokretnim masama.
 
