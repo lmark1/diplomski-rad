@@ -53,6 +53,9 @@
 \newcommand{\Ta}{\pazocal{T}}
 \newcommand{\La}{\pazocal{L}}
 
+%Numerating equations in *
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
 \usepackage{amsmath}
 
 \begin{document}
@@ -302,9 +305,6 @@ TODO
 		\end{bmatrix} \in SO(3)
 	\end{equation}
 	
-	\newpage
-	\clearpage
-	
 	Ako se sada razvije matrica rotacije u Taylorov red prvog stupnja dobit će se matrica infinitiezimalne rotacije: \\
 	\begin{equation}
 		R( \hat{e}_3, \partial \psi ) = I + \partial \psi 
@@ -374,8 +374,8 @@ TODO
 \begin{gather}
 	\dot{x} = v \\
 	m \dot{v} = mge_3 - fRe_3 \label{thrust_dyn}\\
-	\dot{R} = R\hat{\Omega} \\
-	J\dot{\Omega} + \Omega \times J\Omega = M
+	\dot{R} = R\hat{\Omega} \label{model_ang} \\
+	J\dot{\Omega} + \Omega \times J\Omega = M 
 \end{gather}
 
 gdje je:
@@ -571,7 +571,7 @@ Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u moru
 	\subsection{Pozicijski način upravljanja}
 	Upravljačke vrijednosti za ukupni potisak i momente u pozicijskom načinu upravljanja su slijedeće:
 	\begin{gather}
-		f = - (- k_x e_x - k_v e_v - mg e_3 + m \ddot{x}) \cdot Re_3 \label{thrust_ctrl} \\
+		f = - (- k_x e_x - k_v e_v - mg e_3 + m \ddot{x}_d) \cdot Re_3 \label{thrust_ctrl} \\
 		M = -k_R e_R - k_\Omega e_\Omega + \Omega \times J \Omega - J(\hat{\Omega}R^TR_c\Omega_c - R^TR_c\dot{\Omega}_c)
 	\end{gather}
 	
@@ -589,9 +589,35 @@ Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u moru
 	\begin{equation}
 		\vec{b}_{3c} = \frac{- k_x e_x - k_v e_v - mg e_3 + m \ddot{x}}{\Vert - k_x e_x - k_v e_v - mg e_3 + m \ddot{x} \Vert}
 	\end{equation}
+	
+	\noindent Izračunata kutna brzina dobija se po uzoru na \ref{model_ang}:
+	\begin{equation}
+		\hat{\Omega}_c = R_c^T \dot{R}_c
+	\end{equation} 
+	
+	\noindent Izračunata kutna akceleracija dobija se deriviranjem gornjeg izraza:
+	\begin{align*}
+		\dot{\hat{\Omega}} &= (\dot{R}_c^T \dot{R}_c) + (R_d^T \ddot{R}_c) \\
+		&= (R_c \hat{\Omega}_c)^T(R_c\hat{\Omega}_c) + (R_c^T \ddot{R}_c) \\
+		&= - \hat{\Omega}_c \hat{\Omega}_c + R_c^T \ddot{R}_c \numberthis
+	\end{align*}
 	Izvod upravljačkog zakona se nalazi u dodatku.
 	
+	\newpage
+	\clearpage
 	\subsection{Upravljanje orijentacijom}
+	Upravljanje orijentacijom podrazumijeva matricu rotacije koordinatnog sustava letjelice $R_d$ te željena vrijednost visine letjelice $x_{3d}$. 
+	Upravljački zakon je vrlo sličan prethodnome i glasi:
+	\begin{gather}
+		f = \frac{k_x(x_3 - x_{3d}) + k_v(\dot{x}_3 - \dot{x}_{3d}) + mg - m\ddot{x}_{3d}}{e_3 \cdot Re_3}	\label{orijent_1} \\
+		M = -k_R e_R - k_\Omega e_\Omega + \Omega \times J \Omega - J(\hat{\Omega}R^TR_d\Omega_d - R^TR_d\dot{\Omega}_d) \label{orijent_2}
+	\end{gather}
+	gdje su:
+	\begin{itemize}
+		\item $\Omega_d \in \mathbb{R}^3$ je željena, tj. zadana kutna brzina letjelice 
+		\item $\dot{\Omega}_d \in \mathbb{R}^3$ je željena, tj. zadana kutna akceleracija letjelice
+	\end{itemize}
+
 \chapter{Analiza simulacije}
 \chapter{Zaključak}
 Zaključak.
