@@ -438,8 +438,15 @@ Radi lakše pretvorbe uvodi se matrični zapis na slijedeći način:
 	\includegraphics[width=\textwidth]{figures/model.png}
 	\caption{Vizualni prikaz letjelice i koordinatnih osi.}
 \end{figure}
-Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u morus\_description ROS paketu.
-\todo[inline]{spomenuti morusa i pokretne mase staviti referencu na github}
+
+\noindent U ovom radu bit će razmatran konkretan model multirotorske letjelice sa benzinskim motorima. 
+
+\begin{figure}[h!]
+	\includegraphics[width=9cm, height=5cm]{figures/morus_crop.png}
+	\centering
+	\caption{Model letjelice u Gazebo simulatoru.}
+\end{figure}
+
 \chapter{Geometrijsko upravljanje}
 	
 	\paragraph{}Ako se pri upravljanju sustavima njegov konfiguracijski prostor, odnosno njegove varijable stanja, shvaća kao glatki manifold tada se govori o geometrijskom upravljanju sustavima. Kao što je već rečeno, jedna od prednosti pri upravljanju u prostoru manifolda jest koordinatna invarijantnost. Nakon što je odabran i fiksiran početni koordinatni sustav svo daljnje upravljanje je neovisno o trenutnoj konfiguraciji sustava. \\
@@ -628,13 +635,14 @@ Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u moru
 
 	\paragraph{}Simulacija ovakvog upraljanje bit će napravljena u Gazebo simulatoru unutar ROS okruženja. Upravljačka petlja implementirana je u C++ programskom jeziku za već opisanu multirotorsku letjelicu sa benzinskim motorima. \\
 	U ovom dijelu naglasak je na slijeđenju trajektorije u pozicijskom načinu upravljanja, budući da je ovakav geometrijski kontroler primarno napravljen za slijeđenje trajektorije. Odzivi na skokovitu pobudu bit će također prikazani u oba načina upravljanja za male pobude. \\
-	Odabrana frekvencija upravljačke petlje je 100 Hz. Prilikom računanja kutne brzine i kutne akceleracije uzeto je vrijeme diskretizacije od 10 ms. Postavljeni parametri regulatora nalaze se u dodatku. 
+	Odabrana frekvencija upravljačke petlje je 100 Hz. Prilikom računanja kutne brzine i kutne akceleracije uzeto je vrijeme diskretizacije od 10 ms. Postavljeni parametri regulatora nalaze se u dodatku. \\
+	Zasićenja su postavljena na upravljačke vrijednosti momenata kako bi se izbjegli neželjeni skokovi. Također je postavljeno zasićenje nad izračunatim vrijednostima kutnih brzina i akceleracija, iz istog razloga.
 	
 	\section{Skokovita pobuda u pozicijskom načinu upravljanja}
 	U ovom dijelu zadane su skokovite pobude na poziciju $x_d$. Željene linearne brzine i akceleracije nisu zadane. Skokovita pobuda će slijedno biti primijenjena redom po z, x te y smjeru.
 	
 	\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{plots/pos_pos.png}
+		\includegraphics[width=\textwidth]{plots/pos_pos2.png}
 		\caption{Prikaz odziva pozicija na skokovitu pobudu.}
 	\end{figure}
 	
@@ -642,35 +650,37 @@ Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u moru
 	\clearpage
 	
 	\begin{figure}[!h]
-		\includegraphics[width=\textwidth]{plots/pos_alpha_omega.png}
+		\includegraphics[width=\textwidth]{plots/pos_alpha_omega2.png}
 		\caption{Prikaz izračunatih vrijednosti kutne brzine i kutne  akceleracije  tokom zadavanja skokovite pozicijske pobude.}
 	\end{figure}
 	
 	\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{plots/pos_force_moments.png}
+		\includegraphics[width=\textwidth]{plots/pos_force_moments2.png}
 		\caption{Prikaz upravljačkih vrijednosti sila i momenata te pogreške orijentacije tokom zadavanja skokovite pozicijske pobude.}
 	\end{figure}
 	
-	Budući da je upravljanje smjerom x-osi letjelice $b1_d$ također dio pozicijskog upravljanje, bit će prikazani pripadajući odzivi.
+	Upravljanje orijentacijom također je dio pozicijskog upravljanja, pripadajući odzivi bit će prikazani u nastavku.
 	
 	\newpage
 	\clearpage
 	
 	\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{plots/b1d_b1d.png}
+		\includegraphics[width=\textwidth]{plots/b1d_b1d2.png}
 		\caption{Prikaz odziva smjera x-osi letjelice na skokovitu pobudu.}
 	\end{figure}
 
 	\begin{figure}[!h]
-		\includegraphics[width=\textwidth]{plots/b1d_alpha_omega.png}
+		\includegraphics[width=\textwidth]{plots/b1d_alpha_omega2.png}
 		\caption{Prikaz izračunatih vrijednosti kutne brzine i kutne  akceleracije tokom zadavanja skokovite pobude smjera x-osi letjelice.}
 	\end{figure}
+	
+	Zadane pobude na orijentaciju x-osi su vrlo male. Prilikom velikih promjena željene vrijednosti $b1_d$, letjelica poprima velike vrijednosti momenta oko z-osi te sustav postaje nestabilan, što je za očekivati. 
 	
 	\newpage
 	\clearpage
 	
 	\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{plots/pos_force_moments.png}
+		\includegraphics[width=\textwidth]{plots/b1d_force_moments2.png}
 		\caption{Prikaz upravljačkih vrijednosti sila i momenata te pogreške orijentacije tokom zadavanja skokovite pobude smjera x-osi letjelice.}
 	\end{figure}
 	
@@ -685,15 +695,16 @@ Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u moru
 	\clearpage
 	
 	\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{plots/pos_force_moments.png}
+		\includegraphics[width=\textwidth]{plots/orientation_forces_moments.png}
 		\caption{Prikaz upravljačkih vrijednosti sila i momenata te pogreške orijentacije tokom zadavanja skokovite pobude kuteva.}
 	\end{figure}
+	Može se primijetiti kako prijelazna pojeva kuteva poniranja i valjanja je pristojna, ali nakon dostizanja referentne vrijednosti dolazi do izrazitog odstupanja u stavionarnom stanju. Ista stvar se dešava kod mjerene vrijednosti visine. U trenutku djelovanja na pobude kuteva, letjelica počinje gubiti na visini, odnosno dolazi do odstupanja a u stacionarnom stanju.
 	
 	\section{Slijeđenje trajektorije u pozicijskom načinu upravljanja}
 	U ovom dijelu bit će prikazana spiralna trajektorije uz dodatak rotacije oko z-osi. Slijeđenje trajektorije podrazumijeva zadavanje željene pozicije, željene brzine i akceleracije te smjera x-osi letjelice.
 	
 	\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{plots/traj_pos.png}
+		\includegraphics[width=\textwidth, height=7cm]{plots/traj_pos2.png}
 		\caption{Prikaz odziva pozicije letjelice na zadanu trajektoriju.}
 	\end{figure}
 	
@@ -701,35 +712,36 @@ Napomena: svi parametri modela letjelice nalaze se na github repozitoriju u moru
 	\clearpage
 	
 	\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{plots/traj_a_v.png}
+		\includegraphics[width=\textwidth]{plots/traj_a_v2.png}
 		\caption{Prikaz željenih vrijednosti linearne brzine i akceleracije, izračunatih direktno iz poznatog signala trajektorije.}
 	\end{figure}
 	
 	\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{plots/traj_b1d.png}
+		\includegraphics[width=\textwidth]{plots/traj_b1d2.png}
 		\caption{Prikaz odziva smjera x-osi letjelice na zadanu trajektoriju. }
 	\end{figure}
 	
 	Jednadžba trajektorije je slijedeća:
 	\begin{gather}
-		x(t) = 0.4t \\
-		y(t) = 0.5 sin(\pi t) \\
-		z(t) = 0.6 cos(\pi t) + 2 \\
+		x(t) = 0.4t \label{traj_x}\\
+		y(t) = 0.5 sin(\pi t) \label{traj_y}\\
+		z(t) = 0.6 cos(\pi t) + 2 \label{traj_z}\\
 		b1_{d,x}(t) = cos(\pi t / 5) \\
 		b1_{d,y}(t) = sin(\pi t / 5) \\
 		b1_{d,z}(t) = 0
 	\end{gather}
 	\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{plots/traj_alpha_omega.png}
+		\includegraphics[width=\textwidth]{plots/traj_alpha_omega2.png}
 		\caption{Prikaz izračunatih vrijednosti kutne brzine i akceleracije tijekom zadane trajektorije.}
 	\end{figure}
 	
 	\begin{figure}[h!]
-		\includegraphics[width=\textwidth]{plots/traj_force_moments.png}
+		\includegraphics[width=\textwidth]{plots/traj_force_moments2.png}
 		\caption{Prikaz upravljačkih vrijednosti sila i momenata te pogreške orijentacije tokom trajektorije.}
 	\end{figure}
 	
-	Inicijalno napravljena je trajektorija u trajanju od 10 sekundi međutim radi trome prirode letjelice trajektorija je usporena 3 puta. Rotacija oko z-osi je također značajno usporena. 
+	Inicijalno napravljena je trajektorija u trajanju od 10 sekundi međutim radi trome prirode letjelice trajektorija je usporena 3 puta. Rotacija oko z-osi je također značajno usporena.\\
+	Željene brzine i akceleracije izračunate su deriviranjem izraz za poziciju \ref{traj_x}, \ref{traj_y} i \ref{traj_z}. Vrijednosti željene brzine i akceleracije skalirane su odgovarajućim faktorom budući da je ukupna trajektorija nekoliko puta usporena.
 	
 \chapter{Zaključak}
 Zaključak.
@@ -796,7 +808,7 @@ Zaključak.
 	Sada se upravljački zakon $A$ odabire na način da se kompenzira dinamika sustava: 
 	\begin{gather}
 		A = -k_x e_x - k_ve_v - mge_3 + m\ddot{x}_d \\
-		m\dot{e}_v = -k_x e_x - k_v e_v + X
+		m\dot{e}_v = -k_x e_x - k_v e_v + X \label{lin_dyn}
 	\end{gather}
 	
 	\newpage
@@ -830,13 +842,67 @@ Zaključak.
 	\end{equation}
 	Uvrštavanje \ref{M_u} u izraz za dinamiku pogreške dobije se:
 	\begin{equation}
-		J\dot{e}_\Omega = -k_R e_r - k_\Omega e_\Omega
+		J\dot{e}_\Omega = -k_R e_r - k_\Omega e_\Omega \label{ang_dyn}
 	\end{equation}
 	
 	\newpage
 	\clearpage
 	
 	\section{Parametri regulatora}
+	\todo[inline]{referenciraj ovdje andjelin zavrsni}
+	Početni parametri regulatora određeni su analiziranjem izrazima za dinamiku linearne i kutne pogreške \ref{lin_dyn}, odnosno  \ref{ang_dyn}. Ako se pretpostavi da je orijentacija letjelice u početnom stanju, te da vrijedi $\dot{e}_R=e_\Omega$ tada se dobiju slijedeće diferencijalne jednadžbe drugog reda:
+	\begin{gather}
+		\ddot{e}_x + \frac{k_v}{m}\dot{e}_x + \frac{k_x}{m}e_x = 0 \\
+		\ddot{e}_R + \frac{k_\Omega}{J}\dot{e}_R + \frac{k_R}{J}e_R = 0
+	\end{gather}
+	
+	\noindent Uspoređujući navedene jednadžbe sa karakterističnom prijenosnom funkcijom PT2S člana: 
+	\begin{equation}
+		s^2 + 2 \zeta \omega_n s + \omega_n^2 = 0
+	\end{equation}
+	dobiju se slijedeći parametri regulatora:
+	\begin{gather}
+		k_x = \omega_n^2 m \\
+		k_v = 2 \zeta \omega_n m \\
+		k_R = \omega_n^2 J \\
+		k_\Omega = 2 \zeta \omega_n J
+	\end{gather}
+	Faktor prigušenja uzet je jednak za sve slučajeve i iznosi $\zeta = \frac{\sqrt{2}}{2}$. \\
+	Za $k_x$ i $k_v$ uzeta je prirodna frekvencija $\omega_n = 2 \, rad / s$ za x, y komponentu, a $\omega_n = 5 \, rad / s$ za z komponentu. Odabrana pojačanja iznose:
+	\begin{equation}
+		k_x = 
+		\begin{bmatrix}
+			120 & 0 & 0 \\
+			0 & 120 & 0 \\
+			0 & 0 &  714 
+		\end{bmatrix}
+		\, , \, 
+		k_v = 
+		\begin{bmatrix}
+			84 & 0 & 0 \\
+			0 & 84 & 0 \\
+			0 & 0 & 285
+		\end{bmatrix}
+	\end{equation}
+	Pojačanjima za proporcionalnu i derivativnu komponentu visine dodana je dodatna korekcija zbog odstupanja u stacionarnom stanju.\\
+	Kod pojačanja $k_R$ i $k_\Omega$ uzeta je prirodna frekvencija $\omega_n = 2 \, rad/s$ za x, y komponentu, a $\omega_n = 5 \, rad/s$ za z komponentu. Odabrana pojačanja iznose:
+	\begin{equation}
+		k_R = 
+		\begin{bmatrix}
+			23.04 & 0 & 0 \\
+			0 & 23.04 & 0 \\
+			0 & 0 & 5
+		\end{bmatrix}
+		\, , \,
+		k_\Omega = 
+		\begin{bmatrix}
+			16.29 & 0 & 0 \\
+			0 & 16.29 & 0 \\
+			0 & 0 & 2.5
+		\end{bmatrix}
+	\end{equation}
+	Kao i u prethodnom slučaju pojačanja z-komponente dodatno su korigirane radi boljeg odziva kuta skretanja letjelice.
+	
 \begin{sazetak}
 Ravijen je nelinearni geometrijski regulator za upravljanje multirotorskom letjelicom s benzinskim motorima. Regulator je implementiran u programskom jeziku C++ u ROS okruženju te ispitan korištenjem simulacijskog okruženja Gazebo na postojećem modelu multirotorske bespilotne letjelice s benzinskim motorima i pokretnim masama.
 
