@@ -57,6 +57,7 @@
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \usepackage{amsmath}
+\usepackage{longtable}
 
 \begin{document}
 	% za importanje matlab kodova
@@ -439,13 +440,50 @@ Radi lakše pretvorbe uvodi se matrični zapis na slijedeći način:
 	\caption{Vizualni prikaz letjelice i koordinatnih osi.}
 \end{figure}
 
-\noindent U ovom radu bit će razmatran konkretan model multirotorske letjelice sa benzinskim motorima. 
+\noindent U ovom radu bit će razmotren konkretan model multirotorske letjelice sa benzinskim motorima u Gazebo simulatoru. U nastavku će biti izloženi fizikalni parametri letjelice koji su potrebni za geometrijsko upravljanje.
 
-\begin{figure}[h!]
-	\includegraphics[width=9cm, height=5cm]{figures/morus_crop.png}
+\begin{longtable}[c]{| c | c |}
+	\caption{Tablica parametera rotora.\label{long}} \\
+	\hline
+	\multicolumn{2}{| c |}{Parametri rotora} \\	
+	\hline
+	Masa rotora & 0.2 kg \\
+	\hline
+	Radius rotora & 0.33 m \\
+	\hline
+	Konstanta potiska motora & 0.000456874 kg$\cdot$m \\
+	\hline
+	Konstanta momenta motora & 0.01 m \\
+	\hline
+	Vremenska konstanta motora & 0.125 \\
+	\hline
+\end{longtable}
+
+\newpage
+\clearpage
+
+\begin{figure}[h!] 
+	\includegraphics[width=15cm, height=10cm]{figures/morus_crop.png}
 	\centering
 	\caption{Model letjelice u Gazebo simulatoru.}
 \end{figure}
+
+\begin{longtable}[c]{| c | c |}
+	\caption{Tablica parametera tijela letjelice.\label{long}} \\
+	\hline
+	\multicolumn{2}{| c |}{Parametri tijela letjelice} \\	
+	\hline
+	Masa letjelice & 30 kg \\
+	\hline
+	Moment inercije letjelice u x smjeru  & 5.5268 $\text{kg} \cdot \text{m}^2$ \\
+	\hline
+	Moment inercije letjelice u y smjeru & 5.5268 $\text{kg} \cdot \text{m}^2$ \\
+	\hline
+	Moment inercije letjelice u z smjeru & 6.8854 $\text{kg} \cdot \text{m}^2$ \\
+	\hline
+	Duljina kraka & 0.515 m \\
+	\hline
+\end{longtable}
 
 \chapter{Geometrijsko upravljanje}
 	
@@ -918,8 +956,8 @@ A nonlinear geometric controller is implemented using C++ programming language w
 \end{abstract}
 
 
-\bibliography{literatura}
+\bibliography{literatura.bib}
 \bibliographystyle{fer}
-
 \chapter{Literatura}
+
 \end{document}
