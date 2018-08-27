@@ -1,0 +1,55 @@
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Fernando et~al.(2011)Fernando, Chandiramani, Lee, i
+  Gutierrez]{6161306}
+T.~Fernando, J.~Chandiramani, T.~Lee, i H.~Gutierrez.
+\newblock Robust adaptive geometric tracking controls on so(3) with an
+  application to the attitude dynamics of a quadrotor uav.
+\newblock U \emph{2011 50th IEEE Conference on Decision and Control and
+  European Control Conference}, stranice 7380--7385, Dec 2011.
+\newblock \doi{10.1109/CDC.2011.6161306}.
+
+\bibitem[Francesco~Bullo(2005)]{book:9291}
+Andrew D.~Lewis Francesco~Bullo.
+\newblock \emph{Geometric control of mechanical systems: modeling, analysis,
+  and design for simple mechanical control systems}.
+\newblock Texts in applied mathematics 49. Springer, 1 izdanju, 2005.
+\newblock ISBN 0387221956,9780387221953.
+
+\bibitem[{Lee} et~al.(2010){Lee}, {Leok}, i {Harris
+  McClamroch}]{2010arXiv1003.2005L}
+T.~{Lee}, M.~{Leok}, i N.~{Harris McClamroch}.
+\newblock {Control of Complex Maneuvers for a Quadrotor UAV using Geometric
+  Methods on SE(3)}.
+\newblock \emph{ArXiv e-prints}, O\v{z}ujak 2010.
+
+\bibitem[Lee et~al.(2010)Lee, Leok, i McClamroch]{5717652}
+T.~Lee, M.~Leok, i N.~H. McClamroch.
+\newblock Geometric tracking control of a quadrotor uav on se(3).
+\newblock U \emph{49th IEEE Conference on Decision and Control (CDC)}, stranice
+  5420--5425, Dec 2010.
+\newblock \doi{10.1109/CDC.2010.5717652}.
+
+\bibitem[{Lee} et~al.(2011){Lee}, {Leok}, i {Harris
+  McClamroch}]{2011arXiv1109.4457L}
+T.~{Lee}, M.~{Leok}, i N.~{Harris McClamroch}.
+\newblock {Nonlinear Robust Tracking Control of a Quadrotor UAV on SE(3)}.
+\newblock \emph{ArXiv e-prints}, Rujan 2011.
+
+\bibitem[Schuller(2017)]{geoSchuller}
+Frederic~P. Schuller.
+\newblock \emph{Lectures on the Geometric Anatomy of Theoretical Physics}.
+\newblock Friedrich-Alexander-Universität Erlangen-Nürnberg, Institut für
+  Theoretische Physik III, 2017.
+
+\bibitem[Čirjak()]{zavrsniCirjak}
+Anđela Čirjak.
+\newblock Implementacija i evaluacija geometrijskog upravljanja na
+  multirotorskim letjelicama.
+
+\end{thebibliography}

@@ -1,4 +1,4 @@
-\documentclass[times, utf8, diplomski]{fer}
+\documentclass[times, utf8, diplomski, numeric]{fer}
 \usepackage{booktabs}
 % razno
 \usepackage{amsmath}
@@ -100,10 +100,9 @@
 \chapter{Uvod}
 
 \paragraph{}
-Cilj ovoga rada je razviti i implementirati nelinearno geometrijsko upravljanje za multirotorsku letjelicu s benzinskim motorima. U radu će najprije biti postavljeni temelji za razumijevanje geometrijskog načina upravljanjima sustavima. Zatim će biti predstavljen sustav multirotorske letjelice te način implementacije nelinearnog geometrijskog upravljanja za takav konkretan sustav. Naposlijetku bit će prikazani i komentirani dobiveni rezultati u Gazebo simulatoru. \\
-
-\paragraph{}
-TODO
+Cilj ovoga rada je razviti i implementirati nelinearno geometrijsko upravljanje za multirotorsku letjelicu s benzinskim motorima. U radu će najprije biti postavljeni temelji za razumijevanje matematičke pozadine iza geometrijskog načina upravljanja. Zatim će biti predstavljen sustav multirotorske letjelice te sinteza implementacije nelinearnog geometrijskog upravljanja za takav konkretan sustav. Naposlijetku bit će prikazani dobiveni rezultati Gazebo simulacije geometrijskog upravljanja na modelu letjelice sa benzinskim motorima. \\
+Projektirani geometrijski kontroler služit će za slijeđenje trajektorije, odnosno kako bi se testiralo upravljanje bit će potrebno zadavati signale željene pozicije, brzine i akceleracije u svim vremenskim trenutcima trajektorije. Upravljanje će također biti isprobano sa skokovitim pobudama pozicije i kuta. Budući da upravljanje leži pod pretpostavkom da upraljačka sila ima trenutno djelovanje na letjelicu, bit će zanimljivo promotriti utjecaj benzinskih motora na tu pretpostavku. \\
+Jedna od prednosti ovakvog načina upravljanja jest korištenje matrica rotacija umjesto Eulerovih kuteva ili kvaterniona. Rotacijske matrice su jednoznačan način prikaza orijentacije sustava u odnosu na fiksirani globalni koordinatni sustav, za razliku od Euelerovih kuteva i kvateniona koji posjeduju singularitete, odnosno dvoznačnost prikaza.
 
 \newpage 
 \clearpage
@@ -239,7 +238,6 @@ TODO
 	Neka je skup $G$ sačinjena od svih krutih mapa tako da vrijedi $G = \{ \varphi: \mathbb{R}^n \rightarrow \mathbb{R}^n \, | \, \varphi\, je\, kruta\, mapa\} := T(n)$. Ako se skupu $T(n)$ pridruži operator kompozicije tada se dobiva translacijska Lijeva grupa $(T(n), \circ)$.
 	
 	\subsection{Opća linearna grupa (\textit{"General linear group"})} Neka je skup G sačinjen od matrica, tj. mapa $\varphi$ tako da vrijedi $G = \{ \varphi: \mathbb{R}^n \rightarrow \mathbb{R}^n \,|\, det \, \varphi \neq 0 \}:=GL(n, \mathbb{R}^n)$. Ako bi tome skupu pridodali operator kompozicije $\circ$ tada možemo definirati Lijevu grupu $(GL(n, \mathbb{R}^n), \circ)$. To je dakle grupa svih invertibilnih matrica koje svoje karakteristike glatkog manifolda naslijeđuju činjenicom da su takve matrice otvoreni podskup grupe svih nxn matrica $\mathbb{R}^{n^2}$ koje čine glatki manifold.
-	\todo[inline]{Reci da je Rn2 stvarno glatki manifold (u appendixu?)}
 	
 	\subsection{(Specijalna) Ortogonalna grupa} Neka je skup G sačinjen od matrica $Q$ tako da vrijedi \\ 
 	$G = \{ Q \in GL(n, \mathbb{R}^n) \,|\, det \, Q = \pm 1\} := O(n)$. Budući da su matrice elementi skupa $GL(n, \mathbb{R}^n)$ njima se može pridodijeliti i naslijeđeni operator $\circ$. Takva Lijeva grupa $(O(n),\circ)$ zove se ortogonalna grupa. \\
@@ -287,7 +285,6 @@ TODO
 	
 	\subsection{Eksponencijalna mapa} Poveznica između Lijeve grupe i njene pripadajuće Lijeve algebre je eksponencijalna mapa. Ona je definirana na slijedeći način: $exp: T_eG \rightarrow	G$, tj. $exp: g \rightarrow G.$ \\ Postoji i logaritamska mapa koja služi za inverno mapiranje od Lijeve grupe prema pripadajućoj algebri.
 
-\todo[inline]{Definirati diferencijalne mape između tangencijalnih prostora}
 \section{Algebra specijalne ortogonalne grupe $so(3)$}
 
 	Naposlijetku bit će potrebno definirati pripadajuću Lijevu algebru $so(3)$ nad Lijevom grupom SO(3). \\
@@ -348,7 +345,6 @@ TODO
 	\\
 	Uzevši to u obzir, vektor kutne brzine $\vec{\omega} = [\omega_x, \omega_y, \omega_z]$, može se zapisati u obliku tenzora, tj. elementa algebre $so(3)$ kao: 
 	
-	\todo[inline]{Provjeriti u kodu matricu rotacije - bookmarkan wiki stranica}
 	\begin{equation}
 		\hat{\omega} = 
 		\begin{bmatrix}
@@ -782,8 +778,9 @@ Radi lakše pretvorbe uvodi se matrični zapis na slijedeći način:
 	Željene brzine i akceleracije izračunate su deriviranjem izraz za poziciju \ref{traj_x}, \ref{traj_y} i \ref{traj_z}. Vrijednosti željene brzine i akceleracije skalirane su odgovarajućim faktorom budući da je ukupna trajektorija nekoliko puta usporena.
 	
 \chapter{Zaključak}
-Zaključak.
-
+	\paragraph{} Prilikom slijeđenja trajektorije geometrijsko upravljanje pokazalo se zadovoljavajućim. Najveći problem javlja se prilikom rotacije letjelice oko z-osi što se može objasniti velikom tromošću samog tijela letjelice te zbog samih benzinskih motora. Naime, unutar simulacije imaju ugrađenu vremensku konstantu prijelazne pojave brzine vrtnje rotora što znači da upravljačke sile ne djeluju trenutno na tijelo letjelice. 
+	\todo[inline]{napisati jos nesto...}
+	
 \chapter{Dodatak}
 	\section{Funkcije pogreške u SO(3) prostoru}
 	
@@ -812,8 +809,8 @@ Zaključak.
 	\clearpage
 	
 	\section{Pozicijski način upravljanja}
-	Kako bi se odabrao upravljački zakon \ref{thrust_ctrl} najprije je potrebno napisati dinamiku pogreške linearne brzine \ref{e_v}. Zatim odabrati zadovoljavajući upravljački zakon te analizom stabilnosti pokazati kako je ta pogreška stabilna. 
-	\todo[inline]{Staviti referencu na izvod stabilnosti}
+	Kako bi se odabrao upravljački zakon \ref{thrust_ctrl} najprije je potrebno napisati dinamiku pogreške linearne brzine \ref{e_v}. Zatim odabrati zadovoljavajući upravljački zakon te analizom stabilnosti pokazati kako je ta pogreška stabilna.
+	
 	\begin{gather*}
 		e_v = v - v_d \,/ \cdot m \\
 		me_v = mv - mv_d \, / \cdot \frac{d}{dt} \\
@@ -883,11 +880,13 @@ Zaključak.
 		J\dot{e}_\Omega = -k_R e_r - k_\Omega e_\Omega \label{ang_dyn}
 	\end{equation}
 	
+	\noindent Upućuje se na \cite{2010arXiv1003.2005L}, \cite{5717652}, \cite{2011arXiv1109.4457L} za uvid u provedbu analize stabilnosti Ljapunovljevom metodom. 
+	
 	\newpage
 	\clearpage
 	
 	\section{Parametri regulatora}
-	\todo[inline]{referenciraj ovdje andjelin zavrsni}
+	Postupak pronalaženja parametera regulatora proveden je sukladno sa predloženom metodom u \cite{zavrsniCirjak}.
 	Početni parametri regulatora određeni su analiziranjem izrazima za dinamiku linearne i kutne pogreške \ref{lin_dyn}, odnosno  \ref{ang_dyn}. Ako se pretpostavi da je orijentacija letjelice u početnom stanju, te da vrijedi $\dot{e}_R=e_\Omega$ tada se dobiju slijedeće diferencijalne jednadžbe drugog reda:
 	\begin{gather}
 		\ddot{e}_x + \frac{k_v}{m}\dot{e}_x + \frac{k_x}{m}e_x = 0 \\
@@ -955,9 +954,8 @@ A nonlinear geometric controller is implemented using C++ programming language w
 \keywords{geometric control, multirotor UAV, Lie groups, SE(3), ROS, Gazebo}
 \end{abstract}
 
-
-\bibliography{literatura.bib}
+\nocite{*}
+\bibliography{literatura}
 \bibliographystyle{fer}
-\chapter{Literatura}
 
 \end{document}
