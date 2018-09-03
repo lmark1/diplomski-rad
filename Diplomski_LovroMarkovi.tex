@@ -778,8 +778,9 @@ Radi lakše pretvorbe uvodi se matrični zapis na slijedeći način:
 	Željene brzine i akceleracije izračunate su deriviranjem izraz za poziciju \ref{traj_x}, \ref{traj_y} i \ref{traj_z}. Vrijednosti željene brzine i akceleracije skalirane su odgovarajućim faktorom budući da je ukupna trajektorija nekoliko puta usporena.
 	
 \chapter{Zaključak}
-	\paragraph{} Prilikom slijeđenja trajektorije geometrijsko upravljanje pokazalo se zadovoljavajućim. Najveći problem javlja se prilikom rotacije letjelice oko z-osi što se može objasniti velikom tromošću samog tijela letjelice te zbog samih benzinskih motora. Naime, unutar simulacije imaju ugrađenu vremensku konstantu prijelazne pojave brzine vrtnje rotora što znači da upravljačke sile ne djeluju trenutno na tijelo letjelice. 
-	\todo[inline]{napisati jos nesto...}
+	\paragraph{}
+	Geometrijski način upravljanja sintetiziran je i implementiran za model multirotorske letjelicu u Gazebo simulaciji, unutar okruženja ROS te programskim jezikom C++ \cite{gitRepo1},\cite{gitRepo2}. Upravljanje je također implementirano kao modul za PIXHAWK mikrokontroler \cite{gitRepo3}. Provedene su simulacije unutar Gazebo simulatore u ROS okruženju. Iako je naglasak stavljen na pozicijskoi načinu upravljanja slijeđenjem trajektorije, prikazani su i odzivi na blage skokovite pobude, kao početna točka u testiranju ovakvog upravljanja. Imajući u vidu da je geometrijsko upravljanje namijenjeno za slijeđenje trajektorije ono nije u mogućnosti ostati stabilno za velike vrijednosti skokovitih pobuda. Unatoč tome, odzivi na blage pobude bili su zadovoljavajući uz iznimku rotacije oko z-osi. \\
+	Prilikom slijeđenja trajektorije geometrijsko upravljanje pokazalo se zadovoljavajućim. Najveći problem ponovno se javlja prilikom rotacije letjelice oko z-osi što se može objasniti velikom tromošću samog tijela letjelice te zbog samih benzinskih motora. Naime, unutar motori u Gazebo modelu imaju ugrađenu vremensku konstantu prijelazne pojave brzine vrtnje rotora što znači da promjene upravljačkih sila ne djeluju trenutno na tijelo letjelice. Budući da je jedna od pretpostavki ovakvog načina upravljanja trenutno djelovanje upravljačkih vrijednosti, ova odstupanja su razumljiva. 
 	
 \chapter{Dodatak}
 	\section{Funkcije pogreške u SO(3) prostoru}
@@ -947,7 +948,7 @@ Ravijen je nelinearni geometrijski regulator za upravljanje multirotorskom letje
 \end{sazetak}
 
 % TODO: Navedite naslov na engleskom jeziku.
-\engtitle{Title}
+\engtitle{Geometric control for UAV with internal combustion engines}
 \begin{abstract}
 A nonlinear geometric controller is implemented using C++ programming language within ROS environment. The controller is used on a multirotor unmanned aerial vehicle with internal combustion engines. Results are obtained from Gazebo simulation environment using the existing multirotor UAV model with internal combustion engines and moving masses.
 
